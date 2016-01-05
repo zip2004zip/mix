@@ -2,12 +2,15 @@ package by.mix;
 
 import java.util.Random;
 
-// создали массив и в нем сделали копию этого массива в Random
+// создали массив А и сделали копию из этого массива в массив Б четные и больше 0
 
 public class Main4 {
     public static void main(String[] args) {
         int [] m1 = new int[100];
         Random random = new Random();
+        for (i = o; i < m1.length; i++);
+        m1[i] = i + 1;
+
 
 
 
