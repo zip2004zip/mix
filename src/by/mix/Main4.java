@@ -2,23 +2,18 @@ package by.mix;
 
 import java.util.Random;
 
-// создали массив А и сделали копию из этого массива в массив Б четные и больше 0
+// создали массив А и сделали копию из этого массива в массив Б, но только четные и положительные значения
 
-public class Main4 {
+/*public class Main4 {
     public static void main(String[] args) {
-        int [] m1 = new int[100];
+        int[] m1 = new int[100];
         Random random = new Random();
-        for (i = o; i < m1.length; i++);
-        m1[i] = i + 1;
-
-
-
-
-
-
-
-
-
+        {
+            for (i = o; i < m1.length; i++) ;
+            i = m1 + 1;
+        }
+    }
+}*/
 
 
 

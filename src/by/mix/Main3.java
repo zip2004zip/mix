@@ -6,10 +6,10 @@ import java.util.Random;
 
 public class Main3 {
     public static void main(String[] args) {
-        int[] m1 = new int[100];
+        int[] m1 = new int[10];
         Random random = new Random();
         for (int i = 0; i < m1.length; i++) {
-            m1[i] = -500 + random.nextInt(1000);
+            m1[i] = -50 + random.nextInt(100);
         }
 
         // вывод массива
@@ -17,8 +17,8 @@ public class Main3 {
             System.out.println(i + ":" + m1[i]);
         }
 
-        // копирование массива
-        int[] m2 = new int[100];
+        // копирование массива и только положительных и
+        int[] m2 = new int[10];
         int j = 0;
         for (int i = 0; i < m2.length; i++) {
             if (m1[i] >= 0 && i % 2 == 0) {
