@@ -17,7 +17,7 @@ public class Main3 {
             System.out.println(i + ":" + m1[i]);
         }
 
-        // копирование массива и только положительных и
+        // копирование массива и только положительных и четных
         int[] m2 = new int[10];
         int j = 0;
         for (int i = 0; i < m2.length; i++) {
