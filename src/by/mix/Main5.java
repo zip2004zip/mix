@@ -2,7 +2,6 @@ package by.mix;
 
 import java.util.Random;
 
-// не смог вывести толко последнее число!!!!
 // Задача 2 посчитать процентное соотношение положительных и отрицательных чисел в массиве
 
 public class Main5 {
@@ -29,56 +28,8 @@ public class Main5 {
                     sumOtr++;
                 }
             }
-            System.out.println("Сумма положительных чисел = " + sumPol + ", что составляет " + (sumPol * 100) / 10 + " %");
-            System.out.println("Сумма отрицательных чисел = " + sumOtr + ", что составляет " + (sumOtr * 100) / 10 + " %");
         }
+        System.out.println("Сумма положительных чисел = " + sumPol + ", что составляет " + (sumPol * 100) / 10 + " %");
+        System.out.println("Сумма отрицательных чисел = " + sumOtr + ", что составляет " + (sumOtr * 100) / 10 + " %");
     }
 }
-
-
-
-
-
-
-
-// про год висок или нет
-/*
- int g = 2003;
-if(g%4==0)
-{
-if(g%100==0)
-{
-if(g%400==0)
-{
-System.out.println('Високосный');
-}
-else
-{
-System.out.println('Не високосный');
-}
-}
-else
-{
-System.out.println('Високосный');
-}
-}
-else
-{
-System.out.println('Не високосный');
-}*/
-
-
-// факториал числа
-/*
-public class HelloWorld {
-    public static void main(String[] args) {
-      int f = 1;
-for(int i=1;i <= 10;i++);
-{
-f = f * i;
-}
-System.out.println(\"f=\" + f);
-}
-}
-*/
-
