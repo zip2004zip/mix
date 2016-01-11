@@ -4,13 +4,13 @@ package by.mix;
 
 public class Main7 {
     public static void main(String[] args) {
+        int n = 19;
         int fact = 1;
-
-        for (int i = 1; i <= 10; i++) ;
+        for (int i = 1; i <= n; i++)
         {
             fact *= i;
+            System.out.println(n+"! = " + fact);
         }
-        System.out.println("f= " + fact);
     }
 }
 //https://ru.wikipedia.org/wiki/Факториал
