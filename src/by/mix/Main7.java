@@ -14,6 +14,3 @@ public class Main7 {
     }
 }
 //https://ru.wikipedia.org/wiki/Факториал
-//http://www.cyberforum.ru/search.php?searchid=10513378
-//http://www.inf1.info/kumir/percentage-char прописные и строчные
-// http://pas1.ru/percentage-char
