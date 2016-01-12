@@ -4,10 +4,10 @@ package by.mix;
 
 // Задача 3 Посчитать процентное соотношение прописных и строчных символов в строке
 
-public class Main8 {
+/*public class Main8 {
     public static void main(String[] args) {
 
-        //String [] pred = {"У меня Ничего не выходиТ"};
+        //String [] pred = {"У меня Ничего не выходиТ - ТакИ я програмист"};
         String predl = "У меня Ничего не выходиТ";
         int sumpredl = predl.length();
         int sumB = 0;
@@ -34,7 +34,8 @@ public class Main8 {
             System.out.println("Сумма строчных букв = " + sumM + ", что составляет " + (sumM * 100) / sumpredl + " %");
         }
     }
-}
+}*/
+
 
 
 // http://www.cyberforum.ru/java-j2se/thread445697.html
@@ -42,13 +43,3 @@ public class Main8 {
 // http://pas1.ru/percentage-char
 // http://study-java.ru/uroki-java/rabota-so-strokami-v-java-osnovnye-metody-klassa-string/
 
-
-//задано 4 числа, необходимо найти минимальное
-    /*int[] numbers = {-9, 6, 0, -59};
-    int min = numbers[0];
-for(int i = 0; i < numbers.length; i++){
-        if(min>numbers[i])
-        min = numbers[i];
-        }
-
-        System.out.println(min);*/
