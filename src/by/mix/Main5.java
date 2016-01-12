@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Main5 {
     public static void main(String[] args) {
-        int[] m1 = new int[10];
+        int[] m1 = new int[50];
         int sumPol = 0;
         int sumOtr = 0;
         Random random = new Random();
@@ -29,7 +29,7 @@ public class Main5 {
                 }
             }
         }
-        System.out.println("Сумма положительных чисел = " + sumPol + ", что составляет " + (sumPol * 100) / 10 + " %");
-        System.out.println("Сумма отрицательных чисел = " + sumOtr + ", что составляет " + (sumOtr * 100) / 10 + " %");
+        System.out.println("Сумма положительных чисел = " + sumPol + ", что составляет " + (sumPol * 100) / 50 + " %");
+        System.out.println("Сумма отрицательных чисел = " + sumOtr + ", что составляет " + (sumOtr * 100) / 50 + " %");
     }
 }

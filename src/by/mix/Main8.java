@@ -7,7 +7,7 @@ package by.mix;
 /*public class Main8 {
     public static void main(String[] args) {
 
-        //String [] pred = {"У меня Ничего не выходиТ - ТакИ я програмист"};
+        //String [] pred = {"У меня Ничего не выходиТ - ТакИ я программист"};
         String predl = "У меня Ничего не выходиТ";
         int sumpredl = predl.length();
         int sumB = 0;
