@@ -7,11 +7,11 @@ import java.util.Random;
 
 public class Main21 {
     public static void main(String[] args) {
-        int[][] mas = new int[10][20];
+        int[][] mas = new int[10][10];
 
         initMas(mas);
         printMas(mas);
-        findMaxStr(mas);
+        findSumStr(mas);
 
 
     }
@@ -34,21 +34,17 @@ public class Main21 {
         }
     }
 
-    public static void findMaxStr(int[][] fmas) {
+    public static void findSumStr(int[][] fmas) {
         int sum = fmas[0] + fmas[0];
         int max1 = 0;
         int max2 = 0;
         for (int i = 0; i < fmas.length; i++) {
             for (int j = 0; j < fmas.length; j++) {
               //  if (fmas[i] + fmas[j] > sum) {
-                    sum = fmas[i+1] + fmas[j+1];
-                    max1 = i++;
-                    max2 = j++;
+                    sum = i++;
                 }
-                System.out.println("i1=" + max1 + " i2=" + max2 + " sum=" + sum);
+                System.out.println();
             }
         }
-
-
     }
 
