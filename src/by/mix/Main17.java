@@ -1,12 +1,12 @@
 package by.mix;
 
 
-// двухмерный массив факториал числа
-
+// многомерный массив факториал числа
 
 /*public class Main17 {
     public static void main(String[] args) {
         int i = 5;
+
         System.out.println(factorial(i));
 
     }
