@@ -1,18 +1,17 @@
 package by.mix;
 
 
-// многомерный массив посчитать сумму элементов в каждой строке
+// многомерный массив посчитать сумму элементов в каждой столбике
 
-import java.util.Random;
+/*import java.util.Random;
 
-public class Main21 {
+public class Main22 {
     public static void main(String[] args) {
         int[][] mas = new int[10][5];
 
         initMas(mas);
         printMas(mas);
-        findSumStr(mas);
-
+        findSumStolb(mas);
 
     }
 
@@ -34,7 +33,7 @@ public class Main21 {
         }
     }
 
-    public static void findSumStr(int[][] fmas) {
+    public static void findSumStolb(int[][] fmas) {
         int sum = 0;
         for (int i = 0; i < fmas.length; i++) {
             sum = 0;
@@ -44,4 +43,10 @@ public class Main21 {
             System.out.println(sum);
         }
     }
-}
+}*/
+
+
+
+//http://study-java.ru/uroki-java/urok-12-mnogomerny-e-massivy-v-java/
+
+
