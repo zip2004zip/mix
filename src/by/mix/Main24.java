@@ -7,8 +7,8 @@ package by.mix;
 public class Main24 {
     public static void main(String[] args) {
         int[][] tabl = new int[11][15];
-        int a = 25;
-        int b = 54;
+        int a = 1;
+        int b = 143;
 
         initMas(tabl);
         printMas(tabl);
