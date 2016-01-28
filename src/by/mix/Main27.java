@@ -1,20 +1,31 @@
 package by.mix;
 
 
-// многомерный массив как проходит рабочий день
+// массив как проходит рабочий день
 
+
+import java.util.Random;
 
 public class Main27 {
     public static void main(String[] args) {
 
+        rabochDen();
+
+    }
+
+    public static void rabochDen() {
         zahozhyVZdan();
+        vsemPrivet();
         vklKomp();
         rassmotrenieProekta();
         obed();
         vyhozhyIzZdan();
         vozvrObeda();
+        privetEsliNoviChel();
         zhaloba();
         vozvrZhaloba();
+        otpravkaZhaloba();
+        domoj();
     }
 
     public static void zahozhyVZdan() {
@@ -22,6 +33,21 @@ public class Main27 {
         podnPoLest(5);
         otkrDver();
         zakrDver();
+    }
+
+    public static void vsemPrivet() {
+        System.out.println("Говорю \"Здорова чувачелы!\"");
+    }
+
+    public static void privetEsliNoviChel() {
+        int i;
+        Random rnd = new Random();
+        i = rnd.nextInt(2);
+        if (i == 1) {
+            System.out.println("кто-то новый появился после обеда, здороваюсь");
+        } else {
+            System.out.println("после обеда никого нового не появилось");
+        }
     }
 
     public static void podnPoLest(int etazhVverh) {
@@ -91,11 +117,9 @@ public class Main27 {
     }
 
     public static void vozvrObeda() {
-        System.out.println("Возвращаюсь с обеда");    // Почему повторяется два раза
+        System.out.println("Возвращаюсь с обеда");
         zahozhyVZdan();
-        podnPoLest(5);
-        otkrDver();
-        zakrDver();
+
     }
 
     public static void zhaloba() {
@@ -105,6 +129,7 @@ public class Main27 {
         zakrDver();
         opustPoLest(1);
         vyhozhyIzZdan();
+
     }
 
     public static void dokiZhaloba() {
@@ -114,10 +139,30 @@ public class Main27 {
     public static void vozvrZhaloba() {
         System.out.println("Возвращаюсь с жалобы");
         zahozhyVZdan();
+        otvetZhaloba();
+    }
+
+    public static void otvetZhaloba() {
+        System.out.print("Подготавливаю ответ по жалобе");
+        chaj();
+        otkrDver();
+        zakrDver();
+        opustPoLest(3);
+    }
+
+    public static void otpravkaZhaloba() {
+        System.out.println("Отправка письма по жалобе");
         podnPoLest(5);
         otkrDver();
         zakrDver();
     }
 
-
+    public static void domoj() {
+        System.out.print("Выключаю комп");
+        pereodev();
+        System.out.println("прощаюсь с чувачелами");
+        otkrDver();
+        zakrDver();
+        opustPoLest(1);
+    }
 }
