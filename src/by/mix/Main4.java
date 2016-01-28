@@ -22,7 +22,9 @@ public class Main4 {
         for (int i = 0; i < m2.length; i++) {
             if (m1[i] >= 0 && m1[i] % 2 == 0) {
                 m2[i] = m1[i];
-            System.out.println(i + ":2 " + m2[i]);}
+                System.out.println(i + ":2 " + m2[i]);
+            }
         }
     }
 }
+

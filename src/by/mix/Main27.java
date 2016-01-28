@@ -7,43 +7,116 @@ package by.mix;
 public class Main27 {
     public static void main(String[] args) {
 
-        zashVZdan();
-vklKomp();
+        zahozhyVZdan();
+        vklKomp();
+        rassmotrenieProekta();
+        obed();
+        vyhozhyIzZdan();
+        vozvrObeda();
+        zhaloba();
+        vozvrZhaloba();
     }
 
-    public static void zashVZdan() {
-        System.out.println("Зашел в здание");
+    public static void zahozhyVZdan() {
+        System.out.println("Захожу в здание");
         podnPoLest(5);
         otkrDver();
         zakrDver();
     }
 
     public static void podnPoLest(int etazhVverh) {
-        System.out.println("Поднялся на " + etazhVverh + " этаж");
+        System.out.println("Поднимаюсь на " + etazhVverh + " этаж");
     }
 
     public static void opustPoLest(int etazhVniz) {
-        System.out.println("Опустился на " + etazhVniz + " этаж");
+        System.out.println("Опускаюсь на " + etazhVniz + " этаж");
     }
 
     public static void otkrDver() {
-        System.out.println("Открыл дверь в кабинет");
+        System.out.println("Открываю дверь в кабинет");
     }
 
     public static void zakrDver() {
-        System.out.println("Закрыл дверь в кабинет");
+        System.out.println("Закрываю дверь в кабинет");
     }
 
     public static void vklKomp() {
-        System.out.println("Включаю комп");
+        System.out.print("Включаю комп");
         pereodev();
-    }
-    public static void pereodev(){
-        System.out.println("Пока включаю комп переодеваюсь");
+        stavlChaj();
+        pochta();
+        chaj();
+        otprZhaloby();
     }
 
-    public static void stavlChaj (){
-        System.out.println();
+    public static void pereodev() {
+        System.out.println(" и в это время переодеваюсь");
+    }
+
+    public static void stavlChaj() {
+        System.out.println("Ставлю чайник");
+    }
+
+    public static void pochta() {
+        System.out.print("Проверяю рабочую почту");
+    }
+
+    public static void chaj() {
+        System.out.println(" и пью чай");
+    }
+
+    public static void otprZhaloby() {
+        System.out.println("Перенаправляю жалобы в район");
+    }
+
+    public static void rassmotrenieProekta() {
+        System.out.println("Рассматриваю строительные проекты");
+        izmenenProekt();
+        chaj();
+    }
+
+    public static void izmenenProekt() {
+        System.out.print("Вношу изменения в проект");
+    }
+
+    public static void obed() {
+        System.out.println("Собираюсь на обед");
+        otkrDver();
+        zakrDver();
+        opustPoLest(1);
+    }
+
+    public static void vyhozhyIzZdan() {
+        System.out.println("Выхожу из здания");
+    }
+
+    public static void vozvrObeda() {
+        System.out.println("Возвращаюсь с обеда");    // Почему повторяется два раза
+        zahozhyVZdan();
+        podnPoLest(5);
+        otkrDver();
+        zakrDver();
+    }
+
+    public static void zhaloba() {
+        System.out.println("Выезжаю на разбирателльство по жалобе");
+        dokiZhaloba();
+        otkrDver();
+        zakrDver();
+        opustPoLest(1);
+        vyhozhyIzZdan();
+    }
+
+    public static void dokiZhaloba() {
+        System.out.println("Беру доки по жалобе");
+    }
+
+    public static void vozvrZhaloba() {
+        System.out.println("Возвращаюсь с жалобы");
+        zahozhyVZdan();
+        podnPoLest(5);
+        otkrDver();
+        zakrDver();
     }
 
 
