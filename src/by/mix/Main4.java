@@ -9,7 +9,7 @@ public class Main4 {
         int[] m1 = new int[10];
         Random random = new Random();
         for (int i = 0; i < m1.length; i++) {
-            m1[i] = -50 + random.nextInt(100);
+            m1[i] = random.nextInt(10);
         }
 
         // вывод массива
