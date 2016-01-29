@@ -1,14 +1,17 @@
+/*
 package by.mix;
 
 //import java.util.Random;
 
 // Задача 3 Посчитать процентное соотношение прописных и строчных символов в строке
 
-/*public class Main8 {
+public class Main8 {
     public static void main(String[] args) {
 
         //String [] pred = {"У меня Ничего не выходиТ - ТакИ я программист"};
         String predl = "У меня Ничего не выходиТ - ТакИ я программист";
+        char str, prop, sumS, sumP;
+
         int sumpredl = predl.length();
         int sumB = 0;
         int sumM = 0;
@@ -34,7 +37,7 @@ package by.mix;
             System.out.println("Сумма строчных букв = " + sumM + ", что составляет " + (sumM * 100) / sumpredl + " %");
         }
     }
-}*/
+}
 
 
 
@@ -43,3 +46,4 @@ package by.mix;
 // http://pas1.ru/percentage-char
 // http://study-java.ru/uroki-java/rabota-so-strokami-v-java-osnovnye-metody-klassa-string/
 
+*/

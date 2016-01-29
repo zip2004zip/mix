@@ -1,7 +1,7 @@
 package by.mix;
 
 
-// массив как проходит рабочий день
+// массив лотерея
 
 
 import java.util.Random;
