@@ -8,10 +8,10 @@ import java.util.Random;
 public class Main14 {
     public static void main(String[] args) {
         int[] mas = new int[10];
-        printMas(mas);
+       // printMas(mas);
         Random random = new Random();
         for (int i = 0; i < 10; i++) {
-            mas[i] = -50 + random.nextInt(1000);
+            mas[i] = -500 + random.nextInt(1000);
         }
         printMas(mas);
     }
