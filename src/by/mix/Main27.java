@@ -5,6 +5,7 @@ package by.mix;
 
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main27 {
     public static void main(String[] args) {
@@ -16,15 +17,16 @@ public class Main27 {
     public static void rabochDen() {
         zahozhyVZdan();
         vsemPrivet();
-        vklKomp();
-        rassmotrenieProekta();
-        obed();
+        // vklKomp();
+        questionsNach();
+        //  rassmotrenieProekta();
+        // obed();
         vyhozhyIzZdan();
-        vozvrObeda();
-        privetEsliNoviChel();
-        zhaloba();
-        vozvrZhaloba();
-        otpravkaZhaloba();
+        //  vozvrObeda();
+        //  privetEsliNoviChel();
+        //  zhaloba();
+        //  vozvrZhaloba();
+        //  otpravkaZhaloba();
         domoj();
     }
 
@@ -44,10 +46,60 @@ public class Main27 {
         Random rnd = new Random();
         i = rnd.nextInt(2);
         if (i == 1) {
-            System.out.println("кто-то новый появился после обеда, здороваюсь");
+            System.out.println("О, у нас гости, приветствую!)");
         } else {
             System.out.println("после обеда никого нового не появилось");
         }
+    }
+
+    public static void questionsNach() {
+        int vib, ignore;
+        // do {
+
+        System.out.println("молодой у тебя сегодня много работы! Определяйся на выбор:");
+        System.out.println("1. Рассматриваешь проект");
+        System.out.println("2. Разбираешься по жалобе");
+        System.out.println("3. Ничего не делаешь, а просто пьешь чай и читаешь новости");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Твой выбор?:");
+        vib = scanner.nextInt();
+
+        //     do {
+        //       ignore = scanner.nextInt();
+        //   } while (ignore != "\n");
+        //   }
+        //   while (vib < 1 | vib > 3);
+
+        if (vib == 1) {
+            System.out.println("Молодец, хороший выбор");
+            rassmotrenieProekta();
+        }
+        if (vib == 2) {
+            System.out.println("Неплохой выбор");
+
+            int vib2 = scanner.nextInt();
+            if (vib2 == 1) {
+                System.out.println("");
+            }
+
+        }
+        if (vib == 3) {
+            int i;
+            Random random = new Random();
+            i = random.nextInt(2);
+            if (i == 1) {
+                System.out.println("Губу расскатай, выполнишь два задания");
+            } else {
+                System.out.println("я сегодня добрый, можешь отдохнуть)");
+                System.out.println("Вот это житуха, всегда бы так");
+                news();
+            }
+        }
+    }
+
+    public static void news() {
+        System.out.print("Читаю нвости");
+        chaj();
     }
 
     public static void podnPoLest(int etazhVverh) {
@@ -164,5 +216,6 @@ public class Main27 {
         otkrDver();
         zakrDver();
         opustPoLest(1);
+        vyhozhyIzZdan();
     }
 }

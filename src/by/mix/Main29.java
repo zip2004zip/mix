@@ -10,11 +10,20 @@ import java.util.Scanner;
 
 public class Main29 {
     public static void main(String[] args) {
-
         for (; ; ) {
-            nashMas();
-            povtor();
+            System.out.println("\nжелаешь Начать новый массив?");
+            System.out.println("1: Да");
+            System.out.println("2: Нет");
+            Scanner scanner = new Scanner(System.in);
 
+            System.out.println("Введите число: ");
+            int vib = scanner.nextInt();
+            if (vib == 2) break;
+            {
+                nashMas();
+                //    povtor();
+
+            }
         }
     }
 
@@ -22,21 +31,19 @@ public class Main29 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите количество элемннтов массива: ");
         int sizeMas = scanner.nextInt();
+        double sum = 0;
         int[] mas1 = new int[sizeMas];
         for (int i = 0; i < mas1.length; i++) {
             System.out.println("Введите элемент массива mas[" + i + "]");
             mas1[i] = scanner.nextInt();
-        }
-        double sum = 0;
-        for (int i = 0; i < mas1.length; i++) {
             sum += mas1[i];
-            // System.out.println("Элемент массива:" + mas[i]);
         }
         System.out.println("Общая сумма элементов " + sum + " , а среднее арифметическое = " + sum / sizeMas);
-
     }
+}
 
-    public static void povtor() {
+
+    /*public static void povtor() {
         System.out.println("желаешь продолжить?");
         System.out.println("1: Да");
         System.out.println("2: Нет");
@@ -45,37 +52,8 @@ public class Main29 {
         System.out.println("Введите число: ");
         int vib = scanner.nextInt();
 
-        switch (vib) {
-            case '1':
-                nashMas();
-                break;
-            case '2':
-                System.out.println("Нет так нет");
-                break;
-        }
-    }
-
-}
-
-
-/*
-    Scanner scanner = new Scanner(System.in);
-System.out.println("Введите количество элемннтов массива: ");
-        int sizeMas = scanner.nextInt();
-        int[] mas = new int[sizeMas];
-        double sum = 0;
-
-
-        for (int i = 0; i < mas.length; i++) {
-        System.out.println("Введите элемент массива mas[" + i + "]");
-        mas[i] = scanner.nextInt();
-        }
-        for (int i = 0; i < mas.length; i++) {
-        sum += mas[i];
-        // System.out.println("Элемент массива:" + mas[i]);
-        }
-        System.out.println("Общая сумма элементов " + sum + " , а среднее арифметическое = " + sum / sizeMas);
+        if (vib == 2) break;
 
         }
+    }*/
 
-        }*/
