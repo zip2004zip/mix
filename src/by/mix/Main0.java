@@ -3,47 +3,42 @@ package by.mix;
 // тренировочный Main
 
 
+import com.sun.javafx.geom.AreaOp;
+
 import java.util.Scanner;
 
 public class Main0 {
-    public static void main (String[] args) {
-        int MAXVALUE = 6;
-        int sum = 0;
-        int count = 0;
-        int a, b;
+    public static void main(String[] args)
+    throws java.io.IOException {
+        char ch, ign;
+        for (; ; ) {
+            do {
+                System.out.println("1");
+                System.out.println("2");
+                System.out.println("3");
+                System.out.println("vim или q");
+                Scanner scanner = new Scanner(System.in);
+                ch = (char) System.in.read();
+                do {
+                    ign = (char) System.in.read();
+                } while (ign != '\n');
+            } while (ch < '1' | ch > '3' & ch != '6');
 
-        Scanner in = new Scanner(System.in);
-        System.out.print("Введите количество строк массива: ");
-        a = in.nextInt();
+            if (ch == '6') break;
+            System.out.println("\n");
 
-        System.out.print("Введите количество столбцов массива: ");
-        b = in.nextInt();
-
-
-        int[][] arr = new int[a][b];
-
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                System.out.print("Введите элемент arr[" + i + "][" + j + "]:");
-                arr[i][j] = in.nextInt();
-            }
-        }
-        in.close();
-
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                System.out.print(arr[i][j] + "\t");
-                if (arr[i][j] > MAXVALUE) {
-                    sum += arr[i][j];
-                    count++;
-                }
+            switch (ch) {
+                case '1':
+                    System.out.println("vibr1");
+                    break;
+                case '2':
+                    System.out.println("vibr2");
+                    break;
+                case '3':
+                    System.out.println("vibr3");
+                    break;
             }
             System.out.println();
         }
-
-        System.out.println("Сумма элементов, кторорые больше " + MAXVALUE + " состовляет: " + sum +
-                ". их количество: " + count);
-
     }
 }
-
