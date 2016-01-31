@@ -27,7 +27,7 @@ public class Main27 {
         //  zhaloba();
         //  vozvrZhaloba();
         //  otpravkaZhaloba();
-        domoj();
+      //  domoj();
     }
 
     public static void zahozhyVZdan() {
@@ -56,7 +56,7 @@ public class Main27 {
         int vib, ignore;
         // do {
 
-        System.out.println("молодой у тебя сегодня много работы! Определяйся на выбор:");
+        System.out.println("Николаевич у тебя сегодня много работы! Определяйся на выбор:");
         System.out.println("1. Рассматриваешь проект");
         System.out.println("2. Разбираешься по жалобе");
         System.out.println("3. Ничего не делаешь, а просто пьешь чай и читаешь новости");
@@ -70,20 +70,15 @@ public class Main27 {
         //   }
         //   while (vib < 1 | vib > 3);
 
-        if (vib == 1) {
+        if (vib == 1) {                                      // выбор проекта
             System.out.println("Молодец, хороший выбор");
             rassmotrenieProekta();
         }
-        if (vib == 2) {
+        if (vib == 2) {                                     // выбор жалобы
             System.out.println("Неплохой выбор");
-
-            int vib2 = scanner.nextInt();
-            if (vib2 == 1) {
-                System.out.println("");
-            }
-
+            choiceOfComplaint();
         }
-        if (vib == 3) {
+        if (vib == 3) {                                     // выбор бездельничать
             int i;
             Random random = new Random();
             i = random.nextInt(2);
@@ -97,9 +92,30 @@ public class Main27 {
         }
     }
 
+    public static void choiceOfComplaint() {   // выбор жалобы
+        System.out.println("С кем поедещь на жалобу?:");
+        System.out.println("1. С Гришей");
+        System.out.println("2. Со мной");
+        System.out.println("3. Или сам?");
+        Scanner scanner = new Scanner(System.in);
+        int vib2 = scanner.nextInt();
+        if (vib2 == 1) {
+            System.out.println("C Гришей");
+        }
+        if (vib2 == 2) {
+            System.out.println("C Вами");
+        }
+        if (vib2 == 3) {
+            System.out.println("Сейчас посмотрю жалобу и определюсь");
+            kettle();
+            checkEmail();
+            drinkTea();
+        }
+    }
+
     public static void news() {
         System.out.print("Читаю нвости");
-        chaj();
+        drinkTea();
     }
 
     public static void podnPoLest(int etazhVverh) {
@@ -121,26 +137,22 @@ public class Main27 {
     public static void vklKomp() {
         System.out.print("Включаю комп");
         pereodev();
-        stavlChaj();
-        pochta();
-        chaj();
-        otprZhaloby();
     }
 
     public static void pereodev() {
         System.out.println(" и в это время переодеваюсь");
     }
 
-    public static void stavlChaj() {
+    public static void kettle() {                          // ставлю чайник
         System.out.println("Ставлю чайник");
     }
 
-    public static void pochta() {
+    public static void checkEmail() {                      // проверяю почту
         System.out.print("Проверяю рабочую почту");
     }
 
-    public static void chaj() {
-        System.out.println(" и пью чай");
+    public static void drinkTea() {                         // пью чай
+        System.out.println(" и попиваю чаек");
     }
 
     public static void otprZhaloby() {
@@ -150,7 +162,7 @@ public class Main27 {
     public static void rassmotrenieProekta() {
         System.out.println("Рассматриваю строительные проекты");
         izmenenProekt();
-        chaj();
+        drinkTea();
     }
 
     public static void izmenenProekt() {
@@ -196,7 +208,7 @@ public class Main27 {
 
     public static void otvetZhaloba() {
         System.out.print("Подготавливаю ответ по жалобе");
-        chaj();
+        drinkTea();
         otkrDver();
         zakrDver();
         opustPoLest(3);
