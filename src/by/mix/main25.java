@@ -7,8 +7,9 @@ package by.mix;
 
 public class main25 {
     public static void main(String[] args) {
-        int[][] A = new int[4][4];
-        int n = 4;
+        int n = 5;
+        int[][] A = new int[n][n];
+
 
         initMas(A);
         printMas(A);
@@ -17,8 +18,9 @@ public class main25 {
     public static void initMas(int[][] fmas) {
         for (int i = 0; i < fmas.length; i++) {
             for (int j = 0; j < fmas[i].length; j++)
-                fmas[j][i] = 0;
-                fmas[i][i] = 1;
+                fmas[i][j] += 1;
+                fmas[i][i] = 2;
+
 
         }
     }
@@ -27,7 +29,7 @@ public class main25 {
     public static void printMas(int[][] fmas) {
         for (int i = 0; i < fmas.length; i++) {
             for (int j = 0; j < fmas[i].length; j++) {
-                System.out.printf("%5d", fmas[j][i]);
+                System.out.printf("%5d", fmas[i][j]);
             }
             System.out.println();
         }

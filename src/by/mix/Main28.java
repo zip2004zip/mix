@@ -37,7 +37,7 @@ public class Main28 {
     public static boolean zadumChetn() {
         Random random = new Random();
         int i = random.nextInt(10);
-        if (i%2 !=0) {
+        if (i % 2 != 0) {
             System.out.println("Задумали нечетное");
             return false;
         } else {
