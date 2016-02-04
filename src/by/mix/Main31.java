@@ -41,6 +41,7 @@ public class Main31 {
             }
     }
 
+
     public static void print2Mas(int[] fmas) {
         for (int i = 0; i < fmas.length; i++) {
             System.out.printf("%5d", +fmas[i]);
