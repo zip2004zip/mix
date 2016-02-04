@@ -29,14 +29,12 @@ public class Main32 {
 
     }
 
-
     public static int[] getset(int[] m) {
         int[] m2 = new int[m.length];
         for (int i = 0; i < m2.length; i++) {
             m2[i] = NULL_ELEMENT;
         }
         int j = 0;
-
 
         for (int i = 0; i < m.length; i++) {       // переменная для счетчика
             if (!findMas(m[i], m2)) {
@@ -45,14 +43,12 @@ public class Main32 {
             }
         }
 
-
         int[] r = new int[calcLength(m2)];           // тут создаем массив той длины что нам нужно без -1
         for (int i = 0; i < r.length; i++) {
             r[i] = m2[i];
         }
         return r;
     }
-
 
     public static boolean findMas(int x, int[] m) {
         for (int i = 0; i < m.length; i++) {
@@ -73,8 +69,6 @@ public class Main32 {
         }
         return length;
     }
-
-
 }
 
 
