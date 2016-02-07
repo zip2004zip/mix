@@ -1,5 +1,6 @@
 package by.mix;
 
+// одномерный массив переводим в множество
 
 import java.util.Random;
 
