@@ -29,6 +29,8 @@ public class Main29 {
         System.out.println("Общая сумма элементов " + sum + " , а среднее арифметическое = " + sum / sizeMas);
     }
 
+
+
     public static void povtor() {
         for (; ; ) {
             System.out.println("желаешь продолжить?");
