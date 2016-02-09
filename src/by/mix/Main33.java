@@ -1,47 +1,49 @@
 package by.mix;
 
-// одномерный массив переводим в множество
+/**
+ * двумерный массив переводим в множество
+ */
+
+import by.mix.utils.MasUtils;
 
 import java.util.Random;
 
-public class Main32 {
+public class Main33 {
     public static int NULL_ELEMENT = -1;        // это исспользуем для статической константы именнованная она есть дальше в нескольких местах
 
     public static void main(String[] args) {
-        int[] m = initMas(15);
-        printMas(m);
-        printMas(getset(m));
-
+        int[][] m = initMas(10, 15);
+        MasUtils.printMas(m);
+        MasUtils.printMas(getset(m));
     }
 
-    public static int[] initMas(int max) {
-        int[] m = new int[max];
+
+    public static int[][] initMas(int max1, int max2) {
+        int[][] m = new int[max1][max2];
         Random random = new Random();
         for (int i = 0; i < m.length; i++) {
-            m[i] = random.nextInt(10);
+            for (int j = 0; j < m[i].length; j++) {
+                m[i][j] = random.nextInt(10);
+            }
         }
         return m;
     }
 
-    public static void printMas(int[] m) {
-        for (int i = 0; i < m.length; i++) {
-            System.out.printf("%5d", m[i]);
-        }
-        System.out.println();
 
-    }
-
-    public static int[] getset(int[] m) {
-        int[] m2 = new int[m.length];
+    public static int[] getset(int[][] m) {
+        int[] m2 = new int[m.length * m[0].length];
         for (int i = 0; i < m2.length; i++) {
             m2[i] = NULL_ELEMENT;
         }
-        int j = 0;
 
-        for (int i = 0; i < m.length; i++) {       // переменная для счетчика
-            if (!findMas(m[i], m2)) {
-                m2[j] = m[i];
-                j++;
+        int k = 0;
+
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) { // переменная для счетчика
+                if (!findMas(m[i][j], m2)) {
+                    m2[k] = m[i][j];
+                    k++;
+                }
             }
         }
 
@@ -52,6 +54,7 @@ public class Main32 {
         return r;
     }
 
+
     public static boolean findMas(int x, int[] m) {
         for (int i = 0; i < m.length; i++) {
             if (x == m[i]) {
@@ -60,6 +63,7 @@ public class Main32 {
         }
         return false;
     }
+
 
     public static int calcLength(int[] m) {
         int length = 0;
