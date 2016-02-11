@@ -1,7 +1,7 @@
 package by.mix;
 
 
-// вывели двухмерный массив
+// вывели одномерный массив
 
 import java.util.Random;
 
