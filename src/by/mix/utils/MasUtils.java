@@ -1,9 +1,22 @@
 package by.mix.utils;
 
+import java.util.Random;
+
 /**
  * Created by st on 09.02.2016.
  */
+
 public class MasUtils {
+
+
+    public static int[] initMas(int max) {
+        int[] m = new int[max];
+        Random random = new Random();
+        for (int i = 0; i < m.length; i++) {
+            m[i] = random.nextInt(10);
+        }
+        return m;
+    }
 
 
     public static void printMas(int[] m) {
