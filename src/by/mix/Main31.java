@@ -13,7 +13,7 @@ public class Main31 {
         initMas(mas);
         printMas(mas);
         sortMas(mas);
-        print2Mas(mas);
+        printMas(mas);
     }
 
     public static void initMas(int[] fmas) {
@@ -39,12 +39,5 @@ public class Main31 {
                     fmas[b] = t;
                 }
             }
-    }
-
-
-    public static void print2Mas(int[] fmas) {
-        for (int i = 0; i < fmas.length; i++) {
-            System.out.printf("%5d", +fmas[i]);
-        }
     }
 }
