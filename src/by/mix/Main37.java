@@ -4,12 +4,10 @@ package by.mix;
  * телефонный справочник
  */
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main37 {
     public static int MAX = 5;
-    private static ArrayList list;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -51,7 +49,7 @@ public class Main37 {
 
     private static void showList(String[] names, boolean[] ids, String[] numbers, String[] adresss) {
         System.out.println("\nСписок всех контактов:");
-        System.out.println("--------------------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------------------");
         for (int i = 0; i < ids.length; i++) {
             if (ids[i]) {
                 System.out.printf("| " + i + " - " + "%30s", names[i] + " |");
@@ -60,7 +58,7 @@ public class Main37 {
                 System.out.println();
             }
         }
-        System.out.println("--------------------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------------------");
     }
 
 
@@ -100,13 +98,13 @@ public class Main37 {
         for (int i = 0; i < names.length; i++)
                 {
             if (names[i].equals(name)) {
-                System.out.println("--------------------------------------------------------------------");
+                System.out.println("----------------------------------------------------------------------------");
                 System.out.printf("| " + i + " - " + "%30s", name + " |");
                 System.out.printf("%15s", numbers[i] + " |");
                 System.out.printf("%25s", adresss[i] + " |");
                 System.out.println();
-                System.out.println("--------------------------------------------------------------------");
-              //  break;
+                System.out.println("----------------------------------------------------------------------------");
+                break;
             } //else if (!names[i].equals(name)) {
                // System.out.println("Фамилия не найдена");
            // }
