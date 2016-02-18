@@ -34,12 +34,15 @@ public class Main37 {
                 addContact(names, ids, scanner, numbers, adresss);
 
             } else if ("2".equals(menu)) {
-                    deleteContact ();
+                deleteContact(names, ids, scanner);
+
+            } else if ("3".equals(menu)) {
+                searchContact(names, ids, scanner, numbers, adresss);
 
             } else if ("4".equals(menu)) {
                 showList(names, ids, numbers, adresss);
 
-            }else {
+            } else {
                 System.out.println("\nНеверный пункт меню! Повторите!");
             }
         }
@@ -48,16 +51,16 @@ public class Main37 {
 
     private static void showList(String[] names, boolean[] ids, String[] numbers, String[] adresss) {
         System.out.println("\nСписок всех контактов:");
-        System.out.println("----------------------------------");
+        System.out.println("--------------------------------------------------------------------");
         for (int i = 0; i < ids.length; i++) {
             if (ids[i]) {
-                System.out.printf("| " + i + " " + "%30s", names[i] + " |");
+                System.out.printf("| " + i + " - " + "%30s", names[i] + " |");
                 System.out.printf("%15s", numbers[i] + " |");
                 System.out.printf("%25s", adresss[i] + " |");
                 System.out.println();
             }
         }
-        System.out.println("----------------------------------");
+        System.out.println("--------------------------------------------------------------------");
     }
 
 
@@ -79,16 +82,35 @@ public class Main37 {
         adresss[id] = adress;
     }
 
-    public static void deleteContact (String[] names, boolean[] ids, Scanner scanner){
+    public static void deleteContact(String[] names, boolean[] ids, Scanner scanner) {
+        //  StringBuilder[] namesDel = new StringBuilder[MAX];
         System.out.println("\nУдаление контакта:");
-
         System.out.println("Введите ФИО");
         String name = scanner.nextLine();
-        int id = findId(ids);
+        int id = findIdDel(ids);
         names[id] = name;
         ids[id] = true;
-        list.remove();
+    }
 
+
+    public static void searchContact(String[] names, boolean[] ids, Scanner scanner, String[] numbers, String[] adresss) {
+        System.out.println("\nПоиск контакта:");
+        System.out.println("Введите фамилию для поиска:");
+        String name = scanner.nextLine();
+        for (int i = 0; i < names.length; i++)
+                {
+            if (names[i].equals(name)) {
+                System.out.println("--------------------------------------------------------------------");
+                System.out.printf("| " + i + " - " + "%30s", name + " |");
+                System.out.printf("%15s", numbers[i] + " |");
+                System.out.printf("%25s", adresss[i] + " |");
+                System.out.println();
+                System.out.println("--------------------------------------------------------------------");
+              //  break;
+            } //else if (!names[i].equals(name)) {
+               // System.out.println("Фамилия не найдена");
+           // }
+        }
     }
 
 
@@ -101,4 +123,15 @@ public class Main37 {
         System.out.println("ERROR");
         return -1;
     }
+
+    public static int findIdDel(boolean[] ids) {
+        for (int i = 0; i < ids.length; i--) {
+            if (!ids[i]) {
+                return i;
+            }
+        }
+        System.out.println("ERROR");
+        return -1;
+    }
+
 }
