@@ -4,6 +4,7 @@ package by.mix;
  * телефонный справочник
  */
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main37 {
@@ -26,7 +27,7 @@ public class Main37 {
             System.out.println("2. Удалить контакт");
             System.out.println("3. Поиск контакта");
             System.out.println("4. Вывести все контакты");
-            System.out.println("5. Обновить контакт");
+            System.out.println("5. Редактировать контакт");
             System.out.println("6. Сортировать контакты");
             System.out.println("0. Выход");
             String menu = scanner.nextLine();
@@ -146,9 +147,11 @@ public class Main37 {
                 break;
             } else if ("1".equals(sort)) {
                 //  sortMas(names);
+                Arrays.sort(names);
+                System.out.println(Arrays.toString(names));
 
-            } else if ("2".compareTo()equals(sort)) {
-                for (int a = 1; a < dayBirthdays.length; a++)
+            } else if ("2".equals(sort)) {
+                for (int a = 0; a < dayBirthdays.length; a++)
                     for (int b = dayBirthdays.length - 1; b >= a; b--) {
                         if (dayBirthdays[b - 1] > dayBirthdays[b]) {           // если требуемый порядок следования не соблюдается, поменять элементы местами
                             int t = dayBirthdays[b - 1];
@@ -156,11 +159,11 @@ public class Main37 {
                             dayBirthdays[b] = t;
                         }
                     }
-
             } else if ("3".equals(sort)) {
-                sortMas(monthBirthdays);
+              //  sortMas(monthBirthdays);
+
             } else if ("4".equals(sort)) {
-                sortMas(yearBirthdays);
+              //  sortMas(yearBirthdays);
 
             } else {
                 System.out.println("\nНеверный пункт меню! Повторите!");
@@ -179,7 +182,7 @@ public class Main37 {
         return -1;
     }
 
-    public static void sortMas(int[] fmas) {
+    /*public static void sortMas(int[] fmas) {
         for (int a = 1; a < fmas.length; a++)
             for (int b = fmas.length - 1; b >= a; b--) {
                 if (fmas[b - 1] > fmas[b]) {           // если требуемый порядок следования не соблюдается, поменять элементы местами
@@ -188,6 +191,23 @@ public class Main37 {
                     fmas[b] = t;
                 }
             }
-    }
+    }*/
+
+    /*class Book implements Comparable  {
+        String title;
+        public Book(String t)  {
+            title = t;
+            )
+            public int compareTo(Object b)  {
+                Book book =  (Book)  b;
+                return  (title.compareTo(book.title));
+            }
+        }
+    }*/
 
 }
+
+
+
+
+// http://prologistic.com.ua/primer-sortirovki-s-pomoshh-yu-java-comparable-i-comparator.html
