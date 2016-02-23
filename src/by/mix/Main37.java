@@ -92,22 +92,23 @@ public class Main37 {
 
         System.out.println("Введите дату рождения:");
         System.out.println("День рождения");
-        int dayBirthday = scanner.nextInt();
+        int dayBirthday = Integer.valueOf(scanner.nextLine());
         dayBirthdays[id] = dayBirthday;
 
         System.out.println("Месяц рождения");
-        int monthBirthday = scanner.nextInt();
+        int monthBirthday = Integer.valueOf(scanner.nextLine());
         monthBirthdays[id] = monthBirthday;
 
         System.out.println("Год рождения");
-        int yearBirthday = scanner.nextInt();
+        int yearBirthday = Integer.valueOf(scanner.nextLine());
         yearBirthdays[id] = yearBirthday;
+
     }
 
     public static void deleteContact(boolean[] ids, Scanner scanner) {
         System.out.println("\nУдаление контакта:");
         System.out.println("Введите ID контакта для удаления:");
-        int id = scanner.nextInt();
+        int id = Integer.valueOf(scanner.nextLine());
         ids[id] = false;
     }
 
@@ -116,6 +117,7 @@ public class Main37 {
         System.out.println("\nПоиск контакта:");
         System.out.println("Введите фамилию для поиска:");
         String name = scanner.nextLine();
+
         for (int i = 0; i < names.length; i++) {
             if (name.equals(names[i])) {
                 System.out.println("---------------------------------------------------------------------------------------");
@@ -146,24 +148,16 @@ public class Main37 {
             if ("0".equals(sort)) {
                 break;
             } else if ("1".equals(sort)) {
-                //  sortMas(names);
-                Arrays.sort(names);
-                System.out.println(Arrays.toString(names));
+                sortString(names);
 
             } else if ("2".equals(sort)) {
-                for (int a = 0; a < dayBirthdays.length; a++)
-                    for (int b = dayBirthdays.length - 1; b >= a; b--) {
-                        if (dayBirthdays[b - 1] > dayBirthdays[b]) {           // если требуемый порядок следования не соблюдается, поменять элементы местами
-                            int t = dayBirthdays[b - 1];
-                            dayBirthdays[b - 1] = dayBirthdays[b];
-                            dayBirthdays[b] = t;
-                        }
-                    }
+                sortMas(dayBirthdays);
+
             } else if ("3".equals(sort)) {
-              //  sortMas(monthBirthdays);
+                sortMas(monthBirthdays);
 
             } else if ("4".equals(sort)) {
-              //  sortMas(yearBirthdays);
+                sortMas(yearBirthdays);
 
             } else {
                 System.out.println("\nНеверный пункт меню! Повторите!");
@@ -182,7 +176,7 @@ public class Main37 {
         return -1;
     }
 
-    /*public static void sortMas(int[] fmas) {
+    public static void sortMas(int[] fmas) {
         for (int a = 1; a < fmas.length; a++)
             for (int b = fmas.length - 1; b >= a; b--) {
                 if (fmas[b - 1] > fmas[b]) {           // если требуемый порядок следования не соблюдается, поменять элементы местами
@@ -191,23 +185,33 @@ public class Main37 {
                     fmas[b] = t;
                 }
             }
-    }*/
+    }
 
-    /*class Book implements Comparable  {
-        String title;
-        public Book(String t)  {
-            title = t;
-            )
-            public int compareTo(Object b)  {
-                Book book =  (Book)  b;
-                return  (title.compareTo(book.title));
+    public static void sortString(String[] names) {
+        for (int a = 1; a < names.length; a++)
+            for (int b = names.length - 1; b >= a; b--) {
+                if (names[b - 1].compareTo(names[b]) > 1) {           // если требуемый порядок следования не соблюдается, поменять элементы местами
+                    String t = names[b - 1];
+                    names[b - 1] = names[b];
+                    names[b] = t;
+                }
             }
-        }
-    }*/
-
+    }
 }
 
 
+
+   /* public static String sort Comparable  {
+        String title;
+        public sort(String t)  {
+            title = t;
+            )
+            public int compareTo(Object b)  {
+                sort book =  (sort) b;
+                return  (title.compareTo(sort.title));
+            }
+        }
+    }*/
 
 
 // http://prologistic.com.ua/primer-sortirovki-s-pomoshh-yu-java-comparable-i-comparator.html
