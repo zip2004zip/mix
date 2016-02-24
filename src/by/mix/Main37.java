@@ -4,7 +4,6 @@ package by.mix;
  * телефонный справочник
  */
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main37 {
@@ -54,7 +53,6 @@ public class Main37 {
         }
     }
 
-
     private static void showList(String[] names, boolean[] ids, String[] phones, String[] addresss, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
         System.out.println("\nСписок всех контактов:");
         System.out.println();
@@ -71,7 +69,6 @@ public class Main37 {
         }
         System.out.println("---------------------------------------------------------------------------------------");
     }
-
 
     public static void addContact(String[] names, boolean[] ids, Scanner scanner, String[] phones, String[] addresss, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
         System.out.println("\nДобавление контакта:");
@@ -112,7 +109,6 @@ public class Main37 {
         ids[id] = false;
     }
 
-
     public static void searchContact(String[] names, Scanner scanner, String[] phones, String[] addresss, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
         System.out.println("\nПоиск контакта:");
         System.out.println("Введите фамилию для поиска:");
@@ -148,7 +144,7 @@ public class Main37 {
             if ("0".equals(sort)) {
                 break;
             } else if ("1".equals(sort)) {
-                sortString(names);
+                sortCompare(names);
 
             } else if ("2".equals(sort)) {
                 sortMas(dayBirthdays);
@@ -164,7 +160,6 @@ public class Main37 {
             }
         }
     }
-
 
     public static int findId(boolean[] ids) {
         for (int i = 0; i < ids.length; i++) {
@@ -187,31 +182,35 @@ public class Main37 {
             }
     }
 
-    public static void sortString(String[] names) {
-        for (int a = 1; a < names.length; a++)
-            for (int b = names.length - 1; b >= a; b--) {
-                if (names[b - 1].compareTo(names[b]) > 1) {           // если требуемый порядок следования не соблюдается, поменять элементы местами
-                    String t = names[b - 1];
-                    names[b - 1] = names[b];
-                    names[b] = t;
+
+    public static void sortCompare(String[] names) {
+        for (int b = 0; b < names.length; b++) {
+            for (int a = b + 1; a < names.length; a++) {
+                if (names[a].compareTo(names[b]) < 0) {    // если требуемый порядок следования не соблюдается, поменять элементы местами
+                    String t = names[b];
+                    names[b] = names[a];
+                    names[a] = t;
                 }
             }
+        }
     }
+
+    public static void sortCompare2(String[] names,int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
+        for (int b = 0; b < names.length; b++) {
+            for (int a = b + 1; a < names.length; a++) {
+                if (names[a].compareTo(names[b]) < 0) {    // если требуемый порядок следования не соблюдается, поменять элементы местами
+                    String t = names[b];
+                    names[b] = names[a];
+                    names[a] = t;
+                }
+            }
+        }
+    }
+
 }
 
 
 
-   /* public static String sort Comparable  {
-        String title;
-        public sort(String t)  {
-            title = t;
-            )
-            public int compareTo(Object b)  {
-                sort book =  (sort) b;
-                return  (title.compareTo(sort.title));
-            }
-        }
-    }*/
 
 
 // http://prologistic.com.ua/primer-sortirovki-s-pomoshh-yu-java-comparable-i-comparator.html
