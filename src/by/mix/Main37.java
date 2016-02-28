@@ -4,17 +4,14 @@ package by.mix;
  * телефонный справочник
  */
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.util.Objects;
+import java.io.*;
 import java.util.Scanner;
 
 public class Main37 {
     public static int MAX = 5;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+
         Scanner scanner = new Scanner(System.in);
         String[] names = new String[MAX];
         boolean[] ids = new boolean[MAX];
@@ -24,8 +21,12 @@ public class Main37 {
         int[] monthBirthdays = new int[MAX];
         int[] yearBirthdays = new int[MAX];
 
+      //  String[] names = readToFile("data");
+        readToFile(names, "data");
+
 
         while (true) {
+
             System.out.println("\n- Телефонный справочник. Введите значение:");
             System.out.println("1. Добавить контакт");
             System.out.println("2. Удалить контакт");
@@ -33,12 +34,10 @@ public class Main37 {
             System.out.println("4. Вывести все контакты");
             System.out.println("5. Редактировать контакт");
             System.out.println("6. Сортировать контакты");
-            System.out.println("7. Сохранить в файл");
             System.out.println("0. Выход");
             String menu = scanner.nextLine();
             if ("0".equals(menu)) {
-                saveToFale(names, "Names");
-                saveToFale2(dayBirthdays, "Names2");
+                saveToFile(names, phones, addresss, dayBirthdays, monthBirthdays, yearBirthdays, "data");
                 break;
             } else if ("1".equals(menu)) {
                 addContact(names, ids, scanner, phones, addresss, dayBirthdays, monthBirthdays, yearBirthdays);
@@ -61,17 +60,25 @@ public class Main37 {
         }
     }
 
-    public static void saveToFale(String[] m, String fileName) throws IOException {
+
+
+    public static void saveToFile(String[] names, String[] phones, String[] addresss, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays, String fileName) throws IOException {
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(fileName));
-        objectOutputStream.writeObject(m);
+        objectOutputStream.writeObject(names);
         objectOutputStream.close();
     }
 
-    public static void saveToFale2 (int[] m, String fileName) throws IOException {
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(fileName));
-        objectOutputStream.writeObject(m);
-        objectOutputStream.close();
+    public static void readToFile(String[] names, String fileName) throws IOException, ClassNotFoundException {
+        String[] names;
+        File file = new File("data");
+        if (file.exists()) {
+            ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("data"));
+            names = (String[]) objectInputStream.readObject();
+        } else {
+            names = new String[MAX];
+        }
     }
+
 
     private static void showList(String[] names, boolean[] ids, String[] phones, String[] addresss, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
         System.out.println("\nСписок всех контактов:");
