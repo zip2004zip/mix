@@ -101,6 +101,7 @@ public class Main37 {
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(fileName));
         objectOutputStream.writeObject(mas);
         objectOutputStream.close();
+
     }
 
     public static void saveToFile(boolean[] mas, String fileName) throws IOException {
