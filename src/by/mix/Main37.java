@@ -19,7 +19,7 @@ public class Main37 {
     public static String MONTHBIRTHDAYS = "monthbirthdays.Serik";
     public static String YEARSHBIRTHDAYS = "yearbirthdays.Serik";
     public static String DELIMITER = ",";
-    public static String ENDOFSTRING = "\n";
+    public static String ENDOFSTRING = "\r\n";
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
@@ -77,7 +77,7 @@ public class Main37 {
         }
     }
 
-    /*public static void generateCsvFile(String[] names, boolean[] ids, String[] phones, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) throws IOException {
+    /*public static void saveToCsvFile(String[] names, boolean[] ids, String[] phones, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) throws IOException {
 
         //String s = "ID;Name;Phone;Address;dayBirthdays;monthBirthdays;yearBirthdays";
         String s = "ОХОХО;Name;Phone\n5;7;8";
@@ -190,17 +190,14 @@ public class Main37 {
         System.out.println("Введите дату рождения:");
         System.out.println("День рождения");
         int dayBirthday = Integer.valueOf(scanner.nextLine());
-      //  int dayBirthday = scanner.nextInt();
         dayBirthdays[id] = dayBirthday;
 
         System.out.println("Месяц рождения");
         int monthBirthday = Integer.valueOf(scanner.nextLine());
-       // int monthBirthday = scanner.nextInt();
         monthBirthdays[id] = monthBirthday;
 
         System.out.println("Год рождения");
         int yearBirthday = Integer.valueOf(scanner.nextLine());
-      //  int yearBirthday = scanner.nextInt();
         yearBirthdays[id] = yearBirthday;
     }
 
