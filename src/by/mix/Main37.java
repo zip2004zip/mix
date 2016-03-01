@@ -7,7 +7,6 @@ package by.mix;
 import org.apache.commons.io.FileUtils;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.util.Scanner;
 
 public class Main37 {
@@ -19,8 +18,8 @@ public class Main37 {
     public static String DAYBIRTHDAYS = "daybirthdays.Serik";
     public static String MONTHBIRTHDAYS = "monthbirthdays.Serik";
     public static String YEARSHBIRTHDAYS = "yearbirthdays.Serik";
-    public static String DELIMITER = ";";
-    public static String ENDOFSTRING = "\r\n";
+    public static String DELIMITER = ",";
+    public static String ENDOFSTRING = "\n";
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
@@ -52,7 +51,7 @@ public class Main37 {
                 saveToFile(addresses, ADDRESS);
                 saveToFile(dayBirthdays, DAYBIRTHDAYS);
                 saveToFile(monthBirthdays, MONTHBIRTHDAYS);
-                saveToFile(yearBirthdays, MONTHBIRTHDAYS);
+                saveToFile(yearBirthdays, YEARSHBIRTHDAYS);
                 break;
             } else if ("1".equals(menu)) {
                 addContact(names, ids, scanner, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
@@ -70,7 +69,7 @@ public class Main37 {
                 sortList(names, ids, scanner, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
 
             } else if ("7".equals(menu)) {
-                generateCsvFile(names, ids, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
+                saveToCsvFile(names, ids, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
 
             } else {
                 System.out.println("\nНеверный пункт меню! Повторите!");
@@ -78,18 +77,31 @@ public class Main37 {
         }
     }
 
-    public static void generateCsvFile(String[] names, boolean[] ids, String[] phones, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) throws IOException {
+    /*public static void generateCsvFile(String[] names, boolean[] ids, String[] phones, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) throws IOException {
 
         //String s = "ID;Name;Phone;Address;dayBirthdays;monthBirthdays;yearBirthdays";
         String s = "ОХОХО;Name;Phone\n5;7;8";
-        /*for (int i = 0; i < ids.length; i++){
+        *//*for (int i = 0; i < ids.length; i++){
             if (ids[i]){
                 s += ENDOFSTRING + i + DELIMITER + names [i] + DELIMITER + phones[i] + DELIMITER +
                         addresses[i] + DELIMITER + dayBirthdays[i] + DELIMITER + monthBirthdays[i] + DELIMITER + yearBirthdays[i];
             }
-        }*/
+        }*//*
         FileUtils.writeStringToFile(new File("ex.csv"), new String(s.getBytes(Charset.forName("UTF-8")), Charset.forName("UTF-8")));
+    }*/
+
+    public static void saveToCsvFile(String[] names, boolean[] ids, String[] phones, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) throws IOException {
+
+        String s = "ID" + DELIMITER + "Name" + DELIMITER + "Phone" + DELIMITER + "Address" + DELIMITER + "dayBirthdays" + DELIMITER + "monthBirthdays" + DELIMITER + "yearBirthdays";
+        for (int i = 0; i < MAX; i++) {
+            if (ids[i]) {
+                s += ENDOFSTRING + i + DELIMITER + names[i] + DELIMITER + phones[i] + DELIMITER +
+                        addresses[i] + DELIMITER + dayBirthdays[i] + DELIMITER + monthBirthdays[i] + DELIMITER + yearBirthdays[i];
+            }
+        }
+        FileUtils.writeStringToFile(new File("excel.csv"), s);
     }
+
 
     public static void saveToFile(String[] mas, String fileName) throws IOException {
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(fileName));
@@ -141,7 +153,7 @@ public class Main37 {
     }
 
 
-    private static void showList(String[] names, boolean[] ids, String[] phones, String[] addresss, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
+    private static void showList(String[] names, boolean[] ids, String[] phones, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
         System.out.println("\nСписок всех контактов:");
         System.out.println();
         System.out.println("| Id |             Name            |    Phone    |         Address         |  Birthday |");
@@ -150,7 +162,7 @@ public class Main37 {
             if (ids[i]) {
                 System.out.printf("| " + i + " | " + "%30s", names[i] + " |");
                 System.out.printf("%15s", phones[i] + " |");
-                System.out.printf("%25s", addresss[i] + " |");
+                System.out.printf("%25s", addresses[i] + " |");
                 System.out.printf(" %10s", dayBirthdays[i] + "." + monthBirthdays[i] + "." + yearBirthdays[i] + " |");
                 System.out.println();
             }
@@ -158,7 +170,7 @@ public class Main37 {
         System.out.println("---------------------------------------------------------------------------------------");
     }
 
-    public static void addContact(String[] names, boolean[] ids, Scanner scanner, String[] phones, String[] addresss, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
+    public static void addContact(String[] names, boolean[] ids, Scanner scanner, String[] phones, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
         System.out.println("\nДобавление контакта:");
 
         System.out.println("Введите ФИО");
@@ -168,26 +180,28 @@ public class Main37 {
         ids[id] = true;
 
         System.out.println("Введите номер телефона");
-        String number = scanner.nextLine();
-        phones[id] = number;
+        String phone = scanner.nextLine();
+        phones[id] = phone;
 
         System.out.println("Введите адрес");
         String adress = scanner.nextLine();
-        addresss[id] = adress;
+        addresses[id] = adress;
 
         System.out.println("Введите дату рождения:");
         System.out.println("День рождения");
         int dayBirthday = Integer.valueOf(scanner.nextLine());
+      //  int dayBirthday = scanner.nextInt();
         dayBirthdays[id] = dayBirthday;
 
         System.out.println("Месяц рождения");
         int monthBirthday = Integer.valueOf(scanner.nextLine());
+       // int monthBirthday = scanner.nextInt();
         monthBirthdays[id] = monthBirthday;
 
         System.out.println("Год рождения");
         int yearBirthday = Integer.valueOf(scanner.nextLine());
+      //  int yearBirthday = scanner.nextInt();
         yearBirthdays[id] = yearBirthday;
-
     }
 
     public static void deleteContact(boolean[] ids, Scanner scanner) {
@@ -202,7 +216,7 @@ public class Main37 {
         }
     }
 
-    public static void searchContact(String[] names, Scanner scanner, String[] phones, String[] addresss, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
+    public static void searchContact(String[] names, Scanner scanner, String[] phones, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
         System.out.println("\nПоиск контакта:");
         System.out.println("Введите фамилию для поиска:");
         String name = scanner.nextLine();
@@ -212,7 +226,7 @@ public class Main37 {
                 System.out.println("---------------------------------------------------------------------------------------");
                 System.out.printf("| " + i + " - " + "%30s", name + " |");
                 System.out.printf("%15s", phones[i] + " |");
-                System.out.printf("%25s", addresss[i] + " |");
+                System.out.printf("%25s", addresses[i] + " |");
                 System.out.printf(" %10s", dayBirthdays[i] + "." + monthBirthdays[i] + "." + yearBirthdays[i] + " |");
                 System.out.println();
                 System.out.println("---------------------------------------------------------------------------------------");
@@ -274,7 +288,6 @@ public class Main37 {
             }
     }
 
-
     /*public static void sortCompare(String[] names) {
         for (int i = 0; i < names.length; i++) {
             for (int j = i + 1; j < names.length; j++) {
@@ -286,7 +299,6 @@ public class Main37 {
             }
         }
     }*/
-
 
     public static void sortCompareNames(boolean[] ids, String[] names) {
         int minI = 0;
