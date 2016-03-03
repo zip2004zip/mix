@@ -13,13 +13,14 @@ public class Main37 {
     public static int MAX = 5;
     public static String IDS = "id.Serik";
     public static String NAMES = "names.Serik";
-    public static String ADDRESS = "address.Serik";
+    public static String ADDRESSES = "address.Serik";
     public static String PHONES = "phones.Serik";
-    public static String DAYBIRTHDAYS = "daybirthdays.Serik";
-    public static String MONTHBIRTHDAYS = "monthbirthdays.Serik";
-    public static String YEARSHBIRTHDAYS = "yearbirthdays.Serik";
+    public static String DAY_BIRTHDAYS = "daybirthdays.Serik";
+    public static String MONTH_BIRTHDAYS = "monthbirthdays.Serik";
+    public static String YEARSH_BIRTHDAYS = "yearbirthdays.Serik";
     public static String DELIMITER = ";";
-    public static String ENDOFSTRING = "\r\n";
+    public static String END_OF_STRING = "\r\n";
+    public static String NAME_FILE = "excel.csv";
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
@@ -27,11 +28,10 @@ public class Main37 {
         String[] names = readStringFromFile(NAMES);
         boolean[] ids = readBooleanFromFile(IDS);
         String[] phones = readStringFromFile(PHONES);
-        String[] addresses = readStringFromFile(ADDRESS);
-        int[] dayBirthdays = readIntFromFile(DAYBIRTHDAYS);
-        int[] monthBirthdays = readIntFromFile(MONTHBIRTHDAYS);
-        int[] yearBirthdays = readIntFromFile(YEARSHBIRTHDAYS);
-
+        String[] addresses = readStringFromFile(ADDRESSES);
+        int[] dayBirthdays = readIntFromFile(DAY_BIRTHDAYS);
+        int[] monthBirthdays = readIntFromFile(MONTH_BIRTHDAYS);
+        int[] yearBirthdays = readIntFromFile(YEARSH_BIRTHDAYS);
 
         while (true) {
             System.out.println("\n- Телефонный справочник. Введите значение:");
@@ -48,13 +48,13 @@ public class Main37 {
                 saveToFile(ids, IDS);
                 saveToFile(names, NAMES);
                 saveToFile(phones, PHONES);
-                saveToFile(addresses, ADDRESS);
-                saveToFile(dayBirthdays, DAYBIRTHDAYS);
-                saveToFile(monthBirthdays, MONTHBIRTHDAYS);
-                saveToFile(yearBirthdays, YEARSHBIRTHDAYS);
+                saveToFile(addresses, ADDRESSES);
+                saveToFile(dayBirthdays, DAY_BIRTHDAYS);
+                saveToFile(monthBirthdays, MONTH_BIRTHDAYS);
+                saveToFile(yearBirthdays, YEARSH_BIRTHDAYS);
                 break;
             } else if ("1".equals(menu)) {
-                addContact(names, ids, scanner, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
+                addContact(ids, names, scanner, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
 
             } else if ("2".equals(menu)) {
                 deleteContact(ids, scanner);
@@ -63,16 +63,16 @@ public class Main37 {
                 searchContact(names, scanner, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
 
             } else if ("4".equals(menu)) {
-                showList(names, ids, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
+                showList(ids, names, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
 
             } else if ("5".equals(menu)) {
-                renameContact(names, ids, scanner, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
+                renameContact(ids, names, scanner, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
 
             } else if ("6".equals(menu)) {
-                sortList(names, ids, scanner, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
+                sortList(ids, names, scanner, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
 
             } else if ("7".equals(menu)) {
-                saveToCsvFile(names, ids, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
+                saveToCsvFile(ids, names, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
 
             } else {
                 System.out.println("\nНеверный пункт меню! Повторите!");
@@ -80,31 +80,17 @@ public class Main37 {
         }
     }
 
-    /*public static void saveToCsvFile(String[] names, boolean[] ids, String[] phones, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) throws IOException {
+    public static void saveToCsvFile(boolean[] ids, String[] names, String[] phones, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) throws IOException {
 
-        //String s = "ID;Name;Phone;Address;dayBirthdays;monthBirthdays;yearBirthdays";
-        String s = "ОХОХО;Name;Phone\n5;7;8";
-        *//*for (int i = 0; i < ids.length; i++){
-            if (ids[i]){
-                s += ENDOFSTRING + i + DELIMITER + names [i] + DELIMITER + phones[i] + DELIMITER +
-                        addresses[i] + DELIMITER + dayBirthdays[i] + DELIMITER + monthBirthdays[i] + DELIMITER + yearBirthdays[i];
-            }
-        }*//*
-        FileUtils.writeStringToFile(new File("ex.csv"), new String(s.getBytes(Charset.forName("UTF-8")), Charset.forName("UTF-8")));
-    }*/
-
-    public static void saveToCsvFile(String[] names, boolean[] ids, String[] phones, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) throws IOException {
-
-        String s = "ID" + DELIMITER + "Name" + DELIMITER + "Phone" + DELIMITER + "Address" + DELIMITER + "dayBirthdays" + DELIMITER + "monthBirthdays" + DELIMITER + "yearBirthdays";
+        String s = "sep=;\n" + "ID" + DELIMITER + "Name" + DELIMITER + "Phone" + DELIMITER + "Address" + DELIMITER + "dayBirthdays" + DELIMITER + "monthBirthdays" + DELIMITER + "yearBirthdays" + END_OF_STRING;
         for (int i = 0; i < MAX; i++) {
             if (ids[i]) {
-                s += ENDOFSTRING + i + DELIMITER + names[i] + DELIMITER + phones[i] + DELIMITER +
-                        addresses[i] + DELIMITER + dayBirthdays[i] + DELIMITER + monthBirthdays[i] + DELIMITER + yearBirthdays[i];
+                s += i + DELIMITER + names[i] + DELIMITER + phones[i] + DELIMITER +
+                        addresses[i] + DELIMITER + dayBirthdays[i] + DELIMITER + monthBirthdays[i] + DELIMITER + yearBirthdays[i] + END_OF_STRING;
             }
         }
-        FileUtils.writeStringToFile(new File("excel.csv"), s);
+        FileUtils.writeStringToFile(new File(NAME_FILE), s);
     }
-
 
     public static void saveToFile(String[] mas, String fileName) throws IOException {
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(fileName));
@@ -155,8 +141,7 @@ public class Main37 {
         }
     }
 
-
-    private static void showList(String[] names, boolean[] ids, String[] phones, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
+    private static void showList(boolean[] ids, String[] names, String[] phones, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
         System.out.println("\nСписок всех контактов:");
         System.out.println();
         System.out.println("| Id |             Name            |    Phone    |         Address         |  Birthday |");
@@ -173,7 +158,7 @@ public class Main37 {
         System.out.println("---------------------------------------------------------------------------------------");
     }
 
-    public static void addContact(String[] names, boolean[] ids, Scanner scanner, String[] phones, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
+    public static void addContact(boolean[] ids, String[] names, Scanner scanner, String[] phones, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
         System.out.println("\nДобавление контакта:");
 
         System.out.println("Введите ФИО");
@@ -187,8 +172,8 @@ public class Main37 {
         phones[id] = phone;
 
         System.out.println("Введите адрес");
-        String adress = scanner.nextLine();
-        addresses[id] = adress;
+        String address = scanner.nextLine();
+        addresses[id] = address;
 
         System.out.println("Введите дату рождения:");
         System.out.println("День рождения");
@@ -237,12 +222,12 @@ public class Main37 {
         }
     }
 
-    public static void sortList(String[] names, boolean[] ids, Scanner scanner, String[] phones, String[] addresss, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
+    public static void sortList(boolean[] ids, String[] names, Scanner scanner, String[] phones, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
         while (true) {
             System.out.println("\nСортировать контакты:");
             System.out.println("Введите значение для сортировки:");
             System.out.println("1. Сортироввать по имени");
-            System.out.println("2. Сортироввать по дню рождения");
+            System.out.println("2. Сортироввать по дате рождения");
             System.out.println("3. Сортироввать по месяцу рождения");
             System.out.println("4. Сортироввать по году рождения");
             System.out.println("0. Не сортировать. Назад в меню");
@@ -287,18 +272,6 @@ public class Main37 {
                 }
             }
     }
-
-    /*public static void sortCompare(String[] names) {
-        for (int i = 0; i < names.length; i++) {
-            for (int j = i + 1; j < names.length; j++) {
-                if (names[j].compareTo(names[i]) < 0) {    // если требуемый порядок следования не соблюдается, поменять элементы местами
-                    String t = names[i];
-                    names[i] = names[j];
-                    names[j] = t;
-                }
-            }
-        }
-    }*/
 
     public static void sortCompareNames(boolean[] ids, String[] names) {
         int minI = 0;
@@ -366,51 +339,75 @@ public class Main37 {
         return s;
     }
 
-    public static void renameContact(String[] names, boolean[] ids, Scanner scanner, String[] phones,
-                                     String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
-        System.out.println("Введите ID для редактирования");
-        int id = Integer.valueOf(scanner.nextLine());
-        if (ids[id]) {
-            System.out.println("ФИО?");
-            String name = scanner.nextLine();
-            names[id] = name;
-
-            System.out.println("Введите номер телефона");
-            String phone = scanner.nextLine();
-            phones[id] = phone;
-
-            System.out.println("Введите адрес");
-            String adress = scanner.nextLine();
-            addresses[id] = adress;
-
-            System.out.println("Введите дату рождения:");
-            System.out.println("День рождения");
-            int dayBirthday = Integer.valueOf(scanner.nextLine());
-            if (dayBirthday > 0 && dayBirthday < 32) {
-                dayBirthdays[id] = dayBirthday;
+    public static void renameContact(boolean[] ids, String[] names, Scanner scanner, String[] phones, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
+        //   boolean check = true;
+        //    while (check) {
+        while (true) {
+            System.out.println("\nВведите ID для редактирования:");
+            int searchId = Integer.valueOf(scanner.nextLine());
+            if (searchId < MAX && ids[searchId]) {
+                System.out.println("Контакт найден");
+                while (true) {
+                    System.out.println("1. Редактировать ФИО");
+                    System.out.println("2. Редактировать номер");
+                    System.out.println("3. Редактировать адрес");
+                    System.out.println("4. Редактировать день рождения");
+                    System.out.println("5. Редактировать месяц рождения");
+                    System.out.println("6. Редактировать год рождения");
+                    System.out.println("0. Не редактировать. Назад в меню");
+                    String id = scanner.nextLine();
+                    if ("0".equals(id)) {
+                        //   check = false;
+                        return;
+                    } else if ("1".equals(id)) {
+                        System.out.println("Введите новое ФИО:");
+                        String name = scanner.nextLine();
+                        names[searchId] = name;
+                        System.out.println("ФИО изменено\n");
+                    } else if ("2".equals(id)) {
+                        System.out.println("Введите новый номер:");
+                        String phone = scanner.nextLine();
+                        phones[searchId] = phone;
+                        System.out.println("Номер изменен\n");
+                    } else if ("3".equals(id)) {
+                        System.out.println("Введите новый адрес:");
+                        String address = scanner.nextLine();
+                        addresses[searchId] = address;
+                        System.out.println("Адрес изменен\n");
+                    } else if ("4".equals(id)) {
+                        System.out.println("Введите новый день рождения:");
+                        int dayBirthday = Integer.valueOf(scanner.nextLine());
+                        if (dayBirthday > 0 && dayBirthday < 32) {
+                            dayBirthdays[searchId] = dayBirthday;
+                            System.out.println("День рождения изменен\n");
+                        } else {
+                            System.out.println("не верный день. Введите от 1 до 31");
+                        }
+                    } else if ("5".equals(id)) {
+                        System.out.println("Введите новый месяц рождения");
+                        int monthBirthday = Integer.valueOf(scanner.nextLine());
+                        if (monthBirthday > 0 && monthBirthday < 13) {
+                            monthBirthdays[searchId] = monthBirthday;
+                            System.out.println("Месяц рождения изменен\n");
+                        } else {
+                            System.out.println("не верный месяц. Введите от 1 до 12");
+                        }
+                    } else if ("6".equals(id)) {
+                        System.out.println("Введите новый год рождения");
+                        int yearBirthday = Integer.valueOf(scanner.nextLine());
+                        if (yearBirthday <= 2016) {
+                            yearBirthdays[searchId] = yearBirthday;
+                            System.out.println("Год рождения изменен\n");
+                        } else {
+                            System.out.println("не верный год. Введите не более 2016");
+                        }
+                    } else {
+                        System.out.println("\nНеверный пункт меню! Повторите!");
+                    }
+                }
             } else {
-                System.out.println("не верный день. Введите от 1 до 31");
+                System.out.println("Такого ID не существует");
             }
-
-            System.out.println("Месяц рождения");
-            int monthBirthday = Integer.valueOf(scanner.nextLine());
-            if (monthBirthday > 0 && monthBirthday < 13) {
-                monthBirthdays[id] = monthBirthday;
-            } else {
-                System.out.println("не верный месяц. Введите от 1 до 12");
-            }
-
-            System.out.println("Год рождения");
-            int yearBirthday = Integer.valueOf(scanner.nextLine());
-            if (yearBirthday <= 2016) {
-                yearBirthdays[id] = yearBirthday;
-            } else {
-                System.out.println("не верный год. Введите не более 2016");
-            }
-
-            System.out.println("Готово\n");
-        } else {
-            System.out.println("Такого ID не существует");
         }
     }
 
