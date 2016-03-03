@@ -18,7 +18,7 @@ public class Main37 {
     public static String DAYBIRTHDAYS = "daybirthdays.Serik";
     public static String MONTHBIRTHDAYS = "monthbirthdays.Serik";
     public static String YEARSHBIRTHDAYS = "yearbirthdays.Serik";
-    public static String DELIMITER = ",";
+    public static String DELIMITER = ";";
     public static String ENDOFSTRING = "\r\n";
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -64,6 +64,9 @@ public class Main37 {
 
             } else if ("4".equals(menu)) {
                 showList(names, ids, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
+
+            } else if ("5".equals(menu)) {
+                renameContact(names, ids, scanner, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
 
             } else if ("6".equals(menu)) {
                 sortList(names, ids, scanner, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
@@ -363,10 +366,52 @@ public class Main37 {
         return s;
     }
 
-    public static void renameContact(boolean[] ids, Scanner scanner, String[] names, String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
+    public static void renameContact(String[] names, boolean[] ids, Scanner scanner, String[] phones,
+                                     String[] addresses, int[] dayBirthdays, int[] monthBirthdays, int[] yearBirthdays) {
         System.out.println("Введите ID для редактирования");
         int id = Integer.valueOf(scanner.nextLine());
+        if (ids[id]) {
+            System.out.println("ФИО?");
+            String name = scanner.nextLine();
+            names[id] = name;
 
+            System.out.println("Введите номер телефона");
+            String phone = scanner.nextLine();
+            phones[id] = phone;
+
+            System.out.println("Введите адрес");
+            String adress = scanner.nextLine();
+            addresses[id] = adress;
+
+            System.out.println("Введите дату рождения:");
+            System.out.println("День рождения");
+            int dayBirthday = Integer.valueOf(scanner.nextLine());
+            if (dayBirthday > 0 && dayBirthday < 32) {
+                dayBirthdays[id] = dayBirthday;
+            } else {
+                System.out.println("не верный день. Введите от 1 до 31");
+            }
+
+            System.out.println("Месяц рождения");
+            int monthBirthday = Integer.valueOf(scanner.nextLine());
+            if (monthBirthday > 0 && monthBirthday < 13) {
+                monthBirthdays[id] = monthBirthday;
+            } else {
+                System.out.println("не верный месяц. Введите от 1 до 12");
+            }
+
+            System.out.println("Год рождения");
+            int yearBirthday = Integer.valueOf(scanner.nextLine());
+            if (yearBirthday <= 2016) {
+                yearBirthdays[id] = yearBirthday;
+            } else {
+                System.out.println("не верный год. Введите не более 2016");
+            }
+
+            System.out.println("Готово\n");
+        } else {
+            System.out.println("Такого ID не существует");
+        }
     }
 
     public static boolean findIn(String s, String[] m) {
@@ -377,7 +422,6 @@ public class Main37 {
         }
         return false;
     }
-
 }
 
 
