@@ -26,6 +26,8 @@ public class Main {
             cats[i] = new Cat();
             cats[i].setName(scanner.nextLine());
             cats[i].setColor(scanner.nextLine());
+            cats[i].setAge(Integer.valueOf(scanner.nextLine()));
+
         }
 
         System.out.println();
