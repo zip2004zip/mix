@@ -17,10 +17,10 @@ public class Main37 {
     public static String PHONES = "phones.Serik";
     public static String DAY_BIRTHDAYS = "daybirthdays.Serik";
     public static String MONTH_BIRTHDAYS = "monthbirthdays.Serik";
-    public static String YEARSH_BIRTHDAYS = "yearbirthdays.Serik";
+    public static String YEAR_BIRTHDAYS = "yearbirthdays.Serik";
     public static String DELIMITER = ";";
     public static String END_OF_STRING = "\r\n";
-    public static String NAME_FILE = "excel.csv";
+    public static String NAME_FILE = "Contacts.csv";
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
@@ -31,7 +31,7 @@ public class Main37 {
         String[] addresses = readStringFromFile(ADDRESSES);
         int[] dayBirthdays = readIntFromFile(DAY_BIRTHDAYS);
         int[] monthBirthdays = readIntFromFile(MONTH_BIRTHDAYS);
-        int[] yearBirthdays = readIntFromFile(YEARSH_BIRTHDAYS);
+        int[] yearBirthdays = readIntFromFile(YEAR_BIRTHDAYS);
 
         while (true) {
             System.out.println("\n- Телефонный справочник. Введите значение:");
@@ -51,7 +51,7 @@ public class Main37 {
                 saveToFile(addresses, ADDRESSES);
                 saveToFile(dayBirthdays, DAY_BIRTHDAYS);
                 saveToFile(monthBirthdays, MONTH_BIRTHDAYS);
-                saveToFile(yearBirthdays, YEARSH_BIRTHDAYS);
+                saveToFile(yearBirthdays, YEAR_BIRTHDAYS);
                 break;
             } else if ("1".equals(menu)) {
                 addContact(ids, names, scanner, phones, addresses, dayBirthdays, monthBirthdays, yearBirthdays);
