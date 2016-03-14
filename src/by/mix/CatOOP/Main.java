@@ -24,12 +24,15 @@ public class Main {
 
         for (int i = 0; i < cats.length; i++) {
             cats[i] = new Cat();
+            cats[i].setSex(true);
+            System.out.println("имя");
             cats[i].setName(scanner.nextLine());
+            System.out.println("cvet");
             cats[i].setColor(scanner.nextLine());
+            System.out.println("age");
             cats[i].setAge(Integer.valueOf(scanner.nextLine()));
-
+            System.out.println();
         }
-
         System.out.println();
     }
 }
