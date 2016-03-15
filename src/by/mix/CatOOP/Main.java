@@ -25,9 +25,9 @@ public class Main {
         for (int i = 0; i < cats.length; i++) {
             cats[i] = new Cat();
             cats[i].setSex(true);
-            System.out.println("имя");
+            System.out.println("name");
             cats[i].setName(scanner.nextLine());
-            System.out.println("cvet");
+            System.out.println("color");
             cats[i].setColor(scanner.nextLine());
             System.out.println("age");
             cats[i].setAge(Integer.valueOf(scanner.nextLine()));
