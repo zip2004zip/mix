@@ -142,7 +142,6 @@ public class Contacts {
         } else {
             System.out.println("There is no contact with this ID!!!");
         }
-
     }
 
     public static void sortChoice(Scanner scanner, boolean[] ids, String[] names, String[] phones, String[] addresses, int[] daysOfBirthdays,
@@ -164,7 +163,6 @@ public class Contacts {
                 System.out.println("Incorrect input");
             }
         }
-
     }
 
     public static void sortViewByName(boolean[] ids, String[] names, String[] phones, String[] addresses, int[] daysOfBirthdays,

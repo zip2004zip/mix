@@ -5,7 +5,19 @@ package by.mix.BoxOOP;
  */
 
 public class SuperBox extends Box {
-    private static int hStarWars = 10;
+    private static int hStarWars = 1;
+    private static int lStarWars = 1;
+    private static int dStarWars = 1;
+
+    @Override
+    public int getD() {
+        return super.getD() + dStarWars;
+    }
+
+    @Override
+    public int getL() {
+        return super.getL() + lStarWars;
+    }
 
     @Override
     public int getH() {

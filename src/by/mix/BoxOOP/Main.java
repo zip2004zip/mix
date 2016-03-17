@@ -7,15 +7,15 @@ package by.mix.BoxOOP;
 public class Main {
     public static void main(String[] args) {
         Box box = new Box();
-        box.setD(10);
-        box.setH(15);
-        box.setL(20);
+        box.setD(2);
+        box.setH(2);
+        box.setL(2);
         System.out.println(box.getVolume());
 
         SuperBox sBox = new SuperBox();
-        sBox.setD(10);
-        sBox.setH(15);
-        sBox.setL(20);
+        sBox.setD(2);
+        sBox.setH(2);
+        sBox.setL(2);
         System.out.println(sBox.getVolume());
     }
 }
