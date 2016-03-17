@@ -1,4 +1,4 @@
-package by.mix.KrugOOP;
+package by.mix.FiguraOOP;
 
 /**
  * Created by st on 17.03.2016.

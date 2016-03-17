@@ -1,4 +1,4 @@
-package by.mix.KrugOOP;
+package by.mix.FiguraOOP;
 
 import java.util.Random;
 
