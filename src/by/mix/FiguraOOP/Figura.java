@@ -9,8 +9,7 @@ public abstract class Figura {
     private String color = Color.WHITE;
 
     public abstract double colculateLength();
+
     public abstract double colculateSquare();
 
 }
-
-

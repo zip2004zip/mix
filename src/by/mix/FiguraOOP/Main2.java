@@ -12,10 +12,10 @@ public class Main2 {
         Random random = new Random();
         for (int i = 0; i < krugs.length; i++) {
             krugs[i] = new Krug2(random.nextInt(12));
-          //  System.out.println("Круг " + i + ":");
+            //  System.out.println("Круг " + i + ":");
             System.out.println(krugs[i].toString());
-          //  System.out.println("длина = " + krugs[i].colculateLength());
-          //  System.out.println("площадь = " + krugs[i].colculateSquare() + "\n");
+            //  System.out.println("длина = " + krugs[i].colculateLength());
+            //  System.out.println("площадь = " + krugs[i].colculateSquare() + "\n");
         }
     }
 }

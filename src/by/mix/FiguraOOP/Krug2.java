@@ -19,8 +19,10 @@ public class Krug2 extends Figura {
         return Math.PI * (Math.pow(radius, 2));
     }
 
+    // здесь мы выводим на печать в Main2
     @Override
     public String toString() {
         return "radius = " + radius + "-- длина = " + colculateLength() + "-- площадь = " + colculateSquare();
     }
+
 }
