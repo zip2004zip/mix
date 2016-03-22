@@ -8,14 +8,26 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        Circle[] circles = new Circle[5];
-        Square[] squares = new Square[5];
+        Figura[] figuras = new Figura[10];
+        Random random = new Random();
+        for (int i = 0; i < figuras.length; i++) {
+            if (random.nextInt(1000) < 500) {
+                figuras[i] = new Circle(random.nextInt(10));
+            } else {
+                figuras[i] = new Square(random.nextInt(10));
+            }
+        }
 
-        initMasCircle(circles);
-        initMasSquare(squares);
+        for (int i = 0; i < figuras.length; i++) {
+            System.out.print(figuras[i].toString() + "\n");
+            if (figuras[i] instanceof Square) {
+                System.out.println("диагональ = " + ((Square)figuras[i]).diagonal());
+            }
+        }
     }
+}
 
-    // инициализация и вывод круга
+    /*// инициализация и вывод круга
     public static void initMasCircle(Circle[] fmas) {
         Random random = new Random();
         for (int i = 0; i < fmas.length; i++) {
@@ -33,5 +45,4 @@ public class Main {
             fmas[i] =new Square(random.nextInt(10));
             System.out.println(fmas[i].toString());
         }
-    }
-}
+    }*/

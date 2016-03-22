@@ -21,9 +21,13 @@ public class Square extends Figura {
         return side * side;
     }
 
+    public double diagonal() {
+        return side * Math.sqrt(2);
+    }
+
     // здесь мы выводим на печать в Main
     @Override
     public String toString() {
-        return "Квадрат - side = " + side + "-- длина = " + colculateLength() + "-- площадь = " + colculateSquare() + Color.WHITE;
+        return "Квадрат - side = " + side + "-- длина = " + colculateLength() + "-- площадь = " + colculateSquare();
     }
 }

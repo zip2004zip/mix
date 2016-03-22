@@ -24,5 +24,4 @@ public class Circle extends Figura {
     public String toString() {
         return "Круг - radius = " + radius + "-- длина = " + colculateLength() + "-- площадь = " + colculateSquare();
     }
-
 }
