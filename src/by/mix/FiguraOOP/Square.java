@@ -4,10 +4,10 @@ package by.mix.FiguraOOP;
  * Created by st on 17.03.2016.
  */
 
-public class Kvadrat extends Figura {
+public class Square extends Figura {
     private int side;
 
-    public Kvadrat(int side) {
+    public Square(int side) {
         this.side = side;
     }
 
@@ -21,6 +21,7 @@ public class Kvadrat extends Figura {
         return side * side;
     }
 
+    // здесь мы выводим на печать в Main
     @Override
     public String toString() {
         return "Квадрат - side = " + side + "-- длина = " + colculateLength() + "-- площадь = " + colculateSquare() + Color.WHITE;

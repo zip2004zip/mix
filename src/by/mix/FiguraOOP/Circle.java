@@ -4,10 +4,10 @@ package by.mix.FiguraOOP;
  * Created by st on 17.03.2016.
  */
 
-public class Krug extends Figura {
+public class Circle extends Figura {
     private int radius;
 
-    public Krug(int radius) {
+    public Circle(int radius) {
         this.radius = radius;
     }
 
@@ -19,7 +19,7 @@ public class Krug extends Figura {
         return Math.PI * (Math.pow(radius, 2));
     }
 
-    // здесь мы выводим на печать в Main2
+    // здесь мы выводим на печать в Main
     @Override
     public String toString() {
         return "Круг - radius = " + radius + "-- длина = " + colculateLength() + "-- площадь = " + colculateSquare();
