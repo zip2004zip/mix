@@ -17,7 +17,9 @@ public class MyString {
 
     public boolean equals(MyString myString) {
         myString.s.length();
+        for (int i = 0; i <s.length(); i++) {
 
+        }
         return false;
     }
 }
