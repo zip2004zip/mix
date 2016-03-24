@@ -27,6 +27,7 @@ public class Main {
     }
 }
 
+
     /*// инициализация и вывод круга
     public static void initMasCircle(Circle[] fmas) {
         Random random = new Random();
