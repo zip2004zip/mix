@@ -9,13 +9,31 @@ package by.mix.MyStringOOP;
 
 public class Main {
     public static void main(String[] args) {
-        MyString[] myStrings = new MyString[2];
-
-        for (int i = 0; i < myStrings.length; i++) {
-            myStrings[i] = new MyString("Der");
-            myStrings[i] = new MyString("Dir");
+        System.out.println("Hello");
+        StringBuffer s = new StringBuffer("0");
+        for (int i = 0; i <= 9; i++) {
+            s.append(i).append(",");
         }
-        myStrings[0].equals(myStrings[1]);
-        System.out.println();
+
+        MyString myString = new MyString("123");
+
+        // вариант 1
+        myString.append(new MyString("456")).append(new MyString("789 "));
+
+        // вариант 2
+        myString = myString.append(new MyString("456"));
+        myString = myString.append(new MyString("789 "));
+
+        // вариант 3
+        myString.append(new MyString("456"));
+        myString.append(new MyString("789"));
+
+        System.out.println(myString.getS());
+
+        MyString myString2 = myString.substring(0, 11);
+
+        System.out.println(myString2.getS());
+
+
     }
 }

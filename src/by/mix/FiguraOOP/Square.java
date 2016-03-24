@@ -28,6 +28,6 @@ public class Square extends Figura {
     // здесь мы выводим на печать в Main
     @Override
     public String toString() {
-        return "Квадрат - side = " + side + "-- длина = " + colculateLength() + "-- площадь = " + colculateSquare();
+        return "Квадрат - side = " + side + " - длина = " + colculateLength() + " - площадь = " + colculateSquare();
     }
 }

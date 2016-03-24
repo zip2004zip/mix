@@ -5,21 +5,46 @@ package by.mix.MyStringOOP;
  */
 
 public class MyString {
-    private String s = "";
+    private String string = "";
 
-    public MyString(String s) {
-        this.s = s;
+    public MyString(String string) {
+        this.string = string;
     }
 
     public String getS() {
-        return s;
+        return string;
+    }
+
+    public int size() {
+        return string.length();
     }
 
     public boolean equals(MyString myString) {
-        myString.s.length();
-        for (int i = 0; i <s.length(); i++) {
-
+        if (string.length() == myString.size()) {
+            for (int i = 0; i < string.length(); i++) {
+                if (string.charAt(i) != myString.string.charAt(i)) {
+                    return false;
+                }
+            }
+            return true;
         }
         return false;
     }
+
+    public MyString append(MyString myString) {
+        string = string.concat(myString.string);
+        return this;
+    }
+
+    public MyString substring(int start, int length) {
+        if (start > size() - 1 || start + length > size()) {
+            return null;
+        }
+        StringBuffer stringBuffer = new StringBuffer("");
+        for (int i = start; i < start + length; i++) {
+            stringBuffer.append(string.charAt(i));
+        }
+        return new MyString(stringBuffer.toString());
+    }
 }
+

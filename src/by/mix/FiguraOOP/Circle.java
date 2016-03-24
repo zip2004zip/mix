@@ -22,6 +22,6 @@ public class Circle extends Figura {
     // здесь мы выводим на печать в Main
     @Override
     public String toString() {
-        return "Круг - radius = " + radius + "-- длина = " + colculateLength() + "-- площадь = " + colculateSquare();
+        return "Круг - radius = " + radius + " - длина = " + colculateLength() + " - площадь = " + colculateSquare();
     }
 }

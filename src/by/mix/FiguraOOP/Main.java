@@ -19,7 +19,7 @@ public class Main {
         }
 
         for (int i = 0; i < figuras.length; i++) {
-            System.out.print(figuras[i].toString() + "\n");
+            System.out.println(figuras[i].toString());
             if (figuras[i] instanceof Square) {
                 System.out.println("диагональ = " + ((Square)figuras[i]).diagonal());
             }
