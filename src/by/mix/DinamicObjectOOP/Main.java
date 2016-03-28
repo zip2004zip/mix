@@ -2,6 +2,7 @@ package by.mix.DinamicObjectOOP;
 
 /**
  * Created by st on 24.03.2016.
+ * Задача №5
  */
 
 public class Main {
@@ -10,8 +11,8 @@ public class Main {
 
 
         ObjectArray objectArray = new ConsoleOutputObjectArray();
-        Contact contact = new Contact("1", "2342");
-        Contact contact2 = new Contact("1", "2342");
+        Contact contact = new Contact("1", "1234");
+        Contact contact2 = new Contact("2", "5678");
 
         objectArray.add(contact);
         objectArray.add(contact2);
@@ -19,7 +20,7 @@ public class Main {
 
         objectArray.printArray();
 
-        ObjectArray objectArray = new ObjectArray() {
+        objectArray = new ObjectArray() {
             @Override
             public void printArray() {
                 for (int i = 0; i < size(); i++) {
