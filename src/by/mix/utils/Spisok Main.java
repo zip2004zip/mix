@@ -1,4 +1,6 @@
 /*Список Main:
+https://docs.google.com/document/d/19V_mq-_9XPC8EZwVu1yGs88g55yVa9Z4shucuFQo4EY/edit?pref=2&pli=1
+
 Main1 создали массив и в нем сделали копию этого массива
 
 Main2 создали массив и в нем сделали копию этого массива в Random
