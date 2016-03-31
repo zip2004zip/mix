@@ -1,7 +1,10 @@
 package by.mix.employeeOOP;
 
+import java.io.IOException;
+
 /**
  * Created by st on 29.03.2016.
+ *
  Создать программу для описания сотрудников. Сотрудники бывают 3 типов, с зп зависящей от отработанных часов,
  с зп фиксированной в месяц и стажеры на практике без зп. Сотрудники закреплены за отделами, у отдела есть свой начальник.
  Предусмотреть интерфейс, отвечающий за печать сотрудников и интерфейс, отвечающий за подсчет зп.
@@ -10,7 +13,7 @@ package by.mix.employeeOOP;
  */
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         EmployerFactory employerFactory = new EmployerFactory();
         FixedSalaryEmployer fixedSalaryEmployer = new FixedSalaryEmployer();
@@ -24,5 +27,11 @@ public class Main {
         fixedSalaryEmployer.print();
         hourSalaryEmployer.print();
         newEmployer.print();
+
+        LogLevel logLevel = LogLevel.ERROR;
+
+        Log.getInstance().write("123", LogLevel.INFO);
+        Log.getInstance().write("4567", LogLevel.WARNING);
+        Log.getInstance().write("8910", LogLevel.ERROR);
     }
 }
