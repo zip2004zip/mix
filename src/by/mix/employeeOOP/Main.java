@@ -28,7 +28,7 @@ public class Main {
         hourSalaryEmployer.print();
         newEmployer.print();
 
-        LogLevel logLevel = LogLevel.ERROR;
+      //  LogLevel logLevel = LogLevel.ERROR;
 
         Log.getInstance().write("123", LogLevel.INFO);
         Log.getInstance().write("4567", LogLevel.WARNING);
