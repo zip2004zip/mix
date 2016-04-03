@@ -22,5 +22,4 @@ public class FixedSalaryEmployer extends AbstractEmployer implements Salary {
     public void print() {
         System.out.println(getName() + " зарабатывает :" + salary);
     }
-
 }

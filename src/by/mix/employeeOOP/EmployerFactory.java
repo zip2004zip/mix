@@ -19,20 +19,20 @@ public class EmployerFactory {
         return employer;
     }
 
-    // новый работник фиксированная зп
+    // СЃРѕР·РґР°РµРј СЂР°Р±РѕС‚РЅРёРєР° СЃ С„РёРєСЃРёСЂРѕРІР°РЅРЅС‹Рј РѕРєР»Р°РґРѕРј
     private void fillFixedSalaryEmployer(FixedSalaryEmployer employer) {
         employer.setName(JOptionPane.showInputDialog("name: "));
         employer.setSalary(BigDecimal.valueOf(Long.valueOf(JOptionPane.showInputDialog("salary: "))));
     }
 
-    // новый работник часовая зп
+    // СЃРѕР·РґР°РµРј СЂР°Р±РѕС‚РЅРёРєР° СЃ РїРѕС‡Р°СЃРѕРІС‹Рј РѕРєР»Р°РґРѕРј
     private void fillHourSalaryEmployer(HourSalaryEmployer employer) {
         employer.setName(JOptionPane.showInputDialog("name: "));
         employer.setHour(Integer.valueOf(JOptionPane.showInputDialog("hour: ")));
         employer.setTarif(BigDecimal.valueOf(Long.valueOf(JOptionPane.showInputDialog("tarif: "))));
     }
 
-    // новый стажер
+    // СЃРѕР·РґР°РµРј СЃС‚Р°Р¶РµСЂР°
     private void fillNewEmployer(NewEmployer employer) {
         employer.setName(JOptionPane.showInputDialog("name: "));
     }
