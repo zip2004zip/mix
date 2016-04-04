@@ -25,6 +25,11 @@ public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
         Scanner scanner = new Scanner(System.in);
+
+
+
+
+
         String[] names = readStringFromFile(NAMES);
         boolean[] ids = readBooleanFromFile(IDS);
         String[] phones = readStringFromFile(PHONES);
