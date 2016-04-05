@@ -11,11 +11,12 @@ public class SuperInt {
         return i;
     }
 
+    public void setI(int i) {
+        this.i = i;
+    }
+
     public SuperInt(int i) {
         this.i = i;
     }
 
-    public void setI(int i) {
-        this.i = i;
-    }
 }
