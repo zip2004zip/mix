@@ -4,7 +4,7 @@ package by.mix.MyStringOOP;
  * Created by st on 22.03.2016.
  */
 
-// Разработать свой класс String с методами equals, concat, length, substring
+// Р Р°Р·СЂР°Р±РѕС‚Р°С‚СЊ СЃРІРѕР№ РєР»Р°СЃСЃ String СЃ РјРµС‚РѕРґР°РјРё equals, concat, length, substring
 
 
 public class Main {
@@ -17,14 +17,14 @@ public class Main {
 
         MyString myString = new MyString("123");
 
-        // вариант 1
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 1
         myString.append(new MyString("456")).append(new MyString("789 "));
 
-        // вариант 2
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 2
         myString = myString.append(new MyString("456"));
         myString = myString.append(new MyString("789 "));
 
-        // вариант 3
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 3
         myString.append(new MyString("456"));
         myString.append(new MyString("789"));
 

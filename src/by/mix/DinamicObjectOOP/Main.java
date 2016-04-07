@@ -3,6 +3,7 @@ package by.mix.DinamicObjectOOP;
 /**
  * Created by st on 24.03.2016.
  * Задача №5
+ * Реализовать свой класс динамического (переменной длинны) массива Object с методами add, delete, size, get
  */
 
 public class Main {
