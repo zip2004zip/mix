@@ -4,7 +4,7 @@ package by.mix.ContactsOOP;
  * Created by Sergei on 03.04.2016.
  */
 public class Contacts {
-    private boolean id;
+    private long id;
     private String name;
     private String phone;
     private String address;
@@ -12,7 +12,7 @@ public class Contacts {
     private int monthBirthday;
     private int yearBirthday;
 
-    public Contacts(boolean id, String name, String phone, String address, int dayBirthday, int monthBirthday, int yearBirthday) {
+    public Contacts(long id, String name, String phone, String address, int dayBirthday, int monthBirthday, int yearBirthday) {
         this.id = id;
         this.name = name;
         this.phone = phone;
@@ -22,11 +22,11 @@ public class Contacts {
         this.yearBirthday = yearBirthday;
     }
 
-    public boolean isId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(boolean id) {
+    public void setId(long id) {
         this.id = id;
     }
 

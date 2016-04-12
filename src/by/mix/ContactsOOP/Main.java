@@ -24,12 +24,13 @@ public class Main {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
+        BookFacade bookFacade = new BookFacadeImpl(new BookServiceImpl());
+        bookFacade.add(new Contacts("1", "2"));
+
+
+
+
         Scanner scanner = new Scanner(System.in);
-
-
-
-
-
         String[] names = readStringFromFile(NAMES);
         boolean[] ids = readBooleanFromFile(IDS);
         String[] phones = readStringFromFile(PHONES);
