@@ -5,7 +5,7 @@ package by.mix.generic;
  * Created by st on 24.03.2016.
  */
 
-public class Contact implements by.mix.generic.Printable {
+public class Contact implements Printable {
     private String name;
     private String phone;
 
