@@ -1,6 +1,5 @@
 package by.mix.oop.shutkaOOP;
 
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -16,7 +15,5 @@ public class Main {
         JokeTimer jokeTimer = new JokeTimer(jokes, new JokeConsolePrinter());
         jokeTimer.setModeTimer(ModeTimer.RANDOM);
         jokeTimer.run();
-
-
     }
 }
