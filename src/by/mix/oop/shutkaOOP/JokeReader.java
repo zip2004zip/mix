@@ -1,7 +1,8 @@
 package by.mix.oop.shutkaOOP;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by st on 21.04.2016.
@@ -11,22 +12,34 @@ import java.io.FileReader;
 // http://www.cyberforum.ru/java-j2se/thread948034.html
 
 public class JokeReader {
-    /*BufferedReader reader = new BufferedReader(new FileReader("D://idea/mix/lib/Jokes.txt"));
-    String line;
-    List<String> lines = new ArrayList<String>();
-    while((line=reader.readLine())!=null)
-    {
-        lines.add(line);
-    }*/
+    public static String FILE = "D:\\Idea\\mix\\src\\by\\mix\\oop\\shutkaOOP\\Joke.txt";
 
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    File f = new File("/root/2/Files.txt");
-    BufferedReader fin = new BufferedReader(new FileReader(f));
-    String name;
-    String line;
-    System.out.println("Print File "+f.getName()+"? y/n");
-    name = br.readLine();
-    if(name.equals("y"))
-            while ((line = fin.readLine()) != null) System.out.println(line);
+    public static List<String> readJokes(String file) {
+        List<String> jokes = new ArrayList<>();
+        BufferedReader bufferedReader = null;
 
+        try {
+            bufferedReader = new BufferedReader(new FileReader(file));
+            String s;
+            while ((s = bufferedReader.readLine()) != null) {
+                jokes.add(s);
+            }
+
+        } catch (IOException e) {
+            throw new JokeException("file" + file + " not found");
+
+        } finally {
+            if (bufferedReader != null) {
+                try {
+                    bufferedReader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        {
+
+            return jokes;
+        }
+    }
 }
