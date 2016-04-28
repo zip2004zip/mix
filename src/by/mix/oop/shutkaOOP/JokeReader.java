@@ -12,7 +12,7 @@ import java.util.List;
 // http://www.cyberforum.ru/java-j2se/thread948034.html
 
 public class JokeReader {
-    public static String FILE = "C:\\Users\\Sergei\\IdeaProjects\\mix\\src\\by\\mix\\oop\\shutkaOOP\\Joke.txt";
+    public static String FILE = "D:\\Idea\\mix\\src\\by\\mix\\oop\\shutkaOOP\\Joke.txt";
 
     public static List<String> readJokes(String file) {
         List<String> jokes = new ArrayList<>();
