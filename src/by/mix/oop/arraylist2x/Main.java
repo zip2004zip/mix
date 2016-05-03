@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by st on 28.04.2016.
+ * двумерный массив
  */
 public class Main {
     public static void main(String[] args) {
