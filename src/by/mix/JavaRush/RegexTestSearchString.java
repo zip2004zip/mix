@@ -10,7 +10,7 @@ import java.util.regex.*;
 public class RegexTestSearchString {
     public static void main(String args[]) {
         String pattern = "[А-Я]+";
-        String text = "Мама я пошлА";
+        String text = "Мама я пошлАn";
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(text);
         while(m.find()) {
