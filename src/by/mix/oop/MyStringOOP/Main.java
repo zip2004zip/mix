@@ -17,10 +17,10 @@ public class Main {
 
         MyString myString = new MyString("123");
 
-        // ������� 1
+        // 1
         myString.append(new MyString("456")).append(new MyString("789 "));
 
-        // ������� 2
+        // 2
         myString = myString.append(new MyString("456"));
         myString = myString.append(new MyString("789 "));
 
